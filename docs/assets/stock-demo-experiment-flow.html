@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>股票决策辅助场景实验流程</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1600px; height: 2980px; }
+    body {
+      background: #f7f8fa;
+      color: #263746;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    }
+    .figure { position: relative; width: 1600px; height: 2980px; overflow: hidden; }
+    .title {
+      position: absolute; left: 72px; top: 55px; width: 1456px;
+      font-size: 45px; font-weight: 500; letter-spacing: .2px;
+    }
+    .subtitle {
+      position: absolute; left: 76px; top: 118px; width: 1440px;
+      color: #60717d; font-size: 23px;
+    }
+    .node {
+      position: absolute; padding: 24px 34px; border: 3px solid;
+      border-radius: 28px; text-align: center; background: #fff;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .node h2 { margin: 0 0 13px; font-size: 31px; font-weight: 500; }
+    .node p { margin: 4px 0; font-size: 23px; line-height: 1.48; }
+    .node .small { font-size: 20px; color: #4f626e; }
+    .blue { background: #e9f3ff; border-color: #4d82b8; }
+    .orange { background: #fff3dd; border-color: #c88119; }
+    .green { background: #e7f5eb; border-color: #38875b; }
+    .purple { background: #f1eafe; border-color: #7658b5; }
+    .neutral { background: #f2f5f6; border-color: #748592; }
+    .teal { background: #e7f7f4; border-color: #338b7c; }
+    .task { left: 410px; top: 175px; width: 780px; height: 155px; }
+    .initial { left: 430px; top: 415px; width: 740px; height: 165px; }
+    .diamond {
+      position: absolute; left: 710px; top: 675px; width: 180px; height: 180px;
+      transform: rotate(45deg); border: 3px solid #c88119; border-radius: 28px;
+      background: #fff3dd; display: flex; align-items: center; justify-content: center;
+    }
+    .diamond span {
+      transform: rotate(-45deg); width: 145px; text-align: center;
+      font-size: 27px; line-height: 1.35; font-weight: 500;
+    }
+    .chat { left: 105px; top: 965px; width: 590px; height: 230px; }
+    .widget { left: 905px; top: 965px; width: 590px; height: 230px; }
+    .equiv { left: 315px; top: 1315px; width: 970px; height: 185px; }
+    .constraint { left: 400px; top: 1615px; width: 800px; height: 175px; }
+    .reuse { left: 95px; top: 1925px; width: 650px; height: 230px; }
+    .intent { left: 855px; top: 1925px; width: 650px; height: 230px; }
+    .revision { left: 315px; top: 2290px; width: 970px; height: 160px; }
+    .benefits { left: 350px; top: 2555px; width: 900px; height: 190px; }
+    .metrics { left: 255px; top: 2835px; width: 1090px; height: 125px; padding: 18px 28px; }
+    .metrics h2 { font-size: 27px; margin-bottom: 8px; }
+    .metrics p { font-size: 19px; line-height: 1.35; }
+    svg.arrows { position: absolute; inset: 0; width: 1600px; height: 2980px; pointer-events: none; }
+    .arrow { fill: none; stroke: #6b7c86; stroke-width: 4; marker-end: url(#arrowhead); }
+    .arrow-label {
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 21px; fill: #7a8992;
+    }
+  </style>
+</head>
+<body>
+  <main class="figure" aria-label="股票决策辅助场景实验流程图">
+    <div class="title">股票决策辅助场景：信息复用与意图调整如何转化为可观察 Benefit</div>
+    <div class="subtitle">系统级比较：Chat-only 以语言为唯一操作通道；Chat + Widget 将信息和当前策略转化为可操作对象</div>
+
+    <section class="node blue task">
+      <h2>实验任务</h2>
+      <p>从 ALFA、BETA、GAMMA 中选择一只值得进一步研究的股票</p>
+      <p>提交 100—150 字选择理由，并指出至少一项待核查风险</p>
+    </section>
+
+    <section class="node blue initial">
+      <h2>共同只读初始阶段</h2>
+      <p>相同的静态走势图、文字事实与 Initial Intent</p>
+      <p class="small">参与者先提交初步候选与一句理由，形成判断锚点</p>
+    </section>
+
+    <div class="diamond"><span>随机分配<br/>交互条件</span></div>
+
+    <section class="node orange chat">
+      <h2>Chat-only</h2>
+      <p>通过语言重新指明、复用已有信息</p>
+      <p>通过 Chat 修改策略，Agent 用文字总结当前策略</p>
+    </section>
+
+    <section class="node teal widget">
+      <h2>Chat + Widget</h2>
+      <p>点击信息对象：关注 / 加入依据 / 调整条件</p>
+      <p>Strategy Object 持续可见，支持 Diff 与 Undo</p>
+    </section>
+
+    <section class="node purple equiv">
+      <h2>等价任务信息与 Agent 逻辑</h2>
+      <p>两组获得相同的数据、事实解释与 Mock Agent 状态逻辑</p>
+      <p>差异在交互结构，以及信息和意图是否成为持久、可操作的共享对象</p>
+    </section>
+
+    <section class="node orange constraint">
+      <h2>新增约束：形成多目标权衡</h2>
+      <p>半年内可能需要 30% 资金，因此更重视可变现性、经营稳定性与下行风险</p>
+      <p>但剩余资金仍希望保留一定增长潜力</p>
+    </section>
+
+    <section class="node purple reuse">
+      <h2>L2｜已有信息二次消费</h2>
+      <p>重新使用早期出现的现金流、客户集中度、估值和负债信息</p>
+      <p class="small">任务同时包含相关事实与合理干扰信息</p>
+    </section>
+
+    <section class="node purple intent">
+      <h2>L3｜用户意图调整</h2>
+      <p>调整期限、风险偏好、流动性要求与增长目标</p>
+      <p class="small">Agent 不得静默改变策略，所有变化需用户确认</p>
+    </section>
+
+    <section class="node green revision">
+      <h2>有依据的策略修订</h2>
+      <p>Exposed → Focused → Evidence → Intent Updated → Used</p>
+    </section>
+
+    <section class="node green benefits">
+      <h2>场景中的具体 Benefits</h2>
+      <p>① 降低既有信息的重新定位与复用成本　② 更准确地完成意图调整</p>
+      <p>③ 使最终理由与当前策略一致　④ 减少关键风险遗漏</p>
+    </section>
+
+    <section class="node neutral metrics">
+      <h2>可观察终点</h2>
+      <p>首次正确引用 · L2完成时间 · Intent调整时间 · Chat轮数 · 输入字符数｜Intent准确率 · 相关依据比例 · 风险遗漏率｜认知负荷 · 控制感 · SUS</p>
+    </section>
+
+    <svg class="arrows" aria-hidden="true">
+      <defs>
+        <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+          <path d="M 0 0 L 12 6 L 0 12 z" fill="#6b7c86"></path>
+        </marker>
+      </defs>
+      <path class="arrow" d="M800 330 L800 405"></path>
+      <text class="arrow-label" x="825" y="377">形成初始锚点</text>
+      <path class="arrow" d="M800 580 L800 660"></path>
+      <text class="arrow-label" x="825" y="630">进入探索阶段</text>
+      <path class="arrow" d="M745 820 C620 875 515 900 410 950"></path>
+      <path class="arrow" d="M855 820 C980 875 1085 900 1200 950"></path>
+      <path class="arrow" d="M400 1195 C450 1240 550 1260 650 1305"></path>
+      <path class="arrow" d="M1200 1195 C1150 1240 1050 1260 950 1305"></path>
+      <path class="arrow" d="M800 1500 L800 1605"></path>
+      <text class="arrow-label" x="825" y="1560">触发后续任务需求</text>
+      <path class="arrow" d="M650 1790 C565 1845 500 1865 420 1915"></path>
+      <path class="arrow" d="M950 1790 C1035 1845 1100 1865 1180 1915"></path>
+      <path class="arrow" d="M420 2155 C500 2200 590 2240 685 2280"></path>
+      <path class="arrow" d="M1180 2155 C1100 2200 1010 2240 915 2280"></path>
+      <path class="arrow" d="M800 2450 L800 2545"></path>
+      <text class="arrow-label" x="825" y="2510">进入最终判断</text>
+      <path class="arrow" d="M800 2745 L800 2825"></path>
+      <text class="arrow-label" x="825" y="2800">量化与主观评估</text>
+    </svg>
+  </main>
+</body>
+</html>

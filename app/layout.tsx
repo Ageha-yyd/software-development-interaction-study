@@ -18,14 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const image = `${protocol}://${host}/og.png`;
-  const title = "Object Lane — Interactive Agent Output";
-  const description = "A research prototype for pointable, persistent agent output objects.";
+  const title = "Stock Intent Lab — 信息复用与意图调整实验";
+  const description = "比较 Chat-only 与 Chat + Widget 在信息二次消费和用户意图调整中的交互效率。";
 
   return {
     title,
     description,
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { title, description, images: [{ url: image, width: 1731, height: 909 }] },
+    openGraph: { title, description, images: [{ url: image, width: 1536, height: 1024 }] },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
