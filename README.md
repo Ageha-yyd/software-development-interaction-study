@@ -5,6 +5,8 @@
 - `Chat-only`：信息仍以相同卡片呈现，但详情、Focus、Evidence、Strategy和状态核查必须通过Chat完成；
 - `Chat + Widget`：保留Chat入口，同时支持直接操作信息对象和持久查看共享状态。
 
+公开地址：<https://stock-intent-lab-v33-public.lyclyc-nsp.chatgpt.site/>
+
 两条件使用相同的19个固定虚构事实、卡片、顺序、详情、Agent结论和权威状态机。页面不提供真实投资建议，也不展示任何尚未由实验数据支持的效果数字。
 
 ## 本地运行
