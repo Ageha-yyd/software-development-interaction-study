@@ -30,6 +30,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -38,3 +39,10 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# local research and generated artifacts
+/tmp/
+/artifacts/
+/.im-dumb/
+/CHI_v6.txt
+*.tsbuildinfo

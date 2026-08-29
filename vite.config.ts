@@ -33,7 +33,7 @@ const localBindingConfig = {
     : [],
 };
 
-export default defineConfig(async () => {
+export default defineConfig(async ({ command }) => {
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
@@ -42,6 +42,20 @@ export default defineConfig(async () => {
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
   const { cloudflare } = await import("@cloudflare/vite-plugin");
+  const bindingConfig = {
+    ...localBindingConfig,
+    // Local workerd cannot see the parent shell directly. Bind secrets only
+    // while serving; production builds receive them from the hosting runtime.
+    ...(command === "serve"
+      ? {
+          vars: {
+            DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY ?? "",
+            DEEPSEEK_BASE_URL: process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com",
+            DEEPSEEK_MODEL: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
+          },
+        }
+      : {}),
+  };
 
   return {
     server: isCodexSeatbeltSandbox
@@ -52,7 +66,7 @@ export default defineConfig(async () => {
       sites(),
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
-        config: localBindingConfig,
+        config: bindingConfig,
       }),
     ],
   };
