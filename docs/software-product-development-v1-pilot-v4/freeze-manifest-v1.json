@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "software-product-development-v1-pilot-v4-2026-09-03",
+  "capturedAt": "2026-09-03T00:22:52.5649868+08:00",
+  "versionLabel": "v4-pilot",
+  "status": "CONTENT_REVIEW_ONLY",
+  "purpose": "Preserve the v4 participant-experience and information-architecture breakthrough as a recoverable pilot baseline while active v4 work continues.",
+  "releaseEligible": false,
+  "runtimeAligned": false,
+  "formalStudyReady": false,
+  "notParticipantData": true,
+  "sourceTreeDirty": true,
+  "source": {
+    "repository": "software-development-interaction-study",
+    "branch": "software-development-base",
+    "baseCommit": "2685cba884c0edee24c6514d69431150d19e62e5"
+  },
+  "files": [
+    {
+      "role": "participant_experience_witness",
+      "sourcePath": "docs/software-product-development-v1-participant-consumed-script.md",
+      "snapshotPath": "docs/software-product-development-v1-pilot-v4/software-product-development-v1-participant-consumed-script.md",
+      "bytes": 49874,
+      "sha256": "ffa8901e1fbc4151f41bb720f3b204adf4ffcddf59699039c33ebee88d4dd70d"
+    },
+    {
+      "role": "participant_content_inventory",
+      "sourcePath": "docs/software-product-development-v1-participant-content-inventory.md",
+      "snapshotPath": "docs/software-product-development-v1-pilot-v4/software-product-development-v1-participant-content-inventory.md",
+      "bytes": 87644,
+      "sha256": "e7c028fea76e7dc768dd0650fda693ee5661289abafa210c59ced87289b149f7"
+    },
+    {
+      "role": "scenario_information_architecture",
+      "sourcePath": "docs/software-product-development-v1-scenario-information-architecture.md",
+      "snapshotPath": "docs/software-product-development-v1-pilot-v4/software-product-development-v1-scenario-information-architecture.md",
+      "bytes": 140652,
+      "sha256": "194c0196b42463f20e13a55a17a2376831d6ad6af942d8231c700854795b0b92"
+    },
+    {
+      "role": "user_view",
+      "sourcePath": "docs/software-product-development-v1-user-view.md",
+      "snapshotPath": "docs/software-product-development-v1-pilot-v4/software-product-development-v1-user-view.md",
+      "bytes": 4179,
+      "sha256": "2a6ac7e03df211be032e444e1732870e40a559ede5c42491367f2b96518533a4"
+    }
+  ],
+  "excludedFromFreeze": [
+    "README.md",
+    "app/",
+    "components/",
+    "lib/experiment/",
+    "scenarios/",
+    "scripts/",
+    "tests/"
+  ],
+  "immutabilityRule": "Never edit this snapshot in place. Preserve later iterations in a new versioned snapshot.",
+  "restoreRule": "Verify every frozen file by byte length and SHA-256 before selectively restoring it to its source path. Requalify tests and runtime separately."
+}
+

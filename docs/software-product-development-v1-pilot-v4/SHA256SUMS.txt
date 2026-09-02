@@ -1,0 +1,4 @@
+ffa8901e1fbc4151f41bb720f3b204adf4ffcddf59699039c33ebee88d4dd70d  software-product-development-v1-participant-consumed-script.md
+e7c028fea76e7dc768dd0650fda693ee5661289abafa210c59ced87289b149f7  software-product-development-v1-participant-content-inventory.md
+194c0196b42463f20e13a55a17a2376831d6ad6af942d8231c700854795b0b92  software-product-development-v1-scenario-information-architecture.md
+2a6ac7e03df211be032e444e1732870e40a559ede5c42491367f2b96518533a4  software-product-development-v1-user-view.md
