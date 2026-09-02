@@ -1,12 +1,14 @@
 import { sites } from "@openai/sites-vite-plugin";
 import vinext from "vinext";
 import { defineConfig } from "vite";
-import hostingConfig from "./.openai/hosting.json";
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   "00000000-0000-4000-8000-000000000000";
 
-const { d1, r2 } = hostingConfig;
+// This derivative intentionally has no Sites project binding. The local
+// hosting file carries no project_id until this project receives its own site.
+const d1: string | null = null;
+const r2: string | null = null;
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
@@ -49,6 +51,9 @@ export default defineConfig(async ({ command }) => {
     ...(command === "serve"
       ? {
           vars: {
+            SOFTWARE_AGENT_API_KEY: process.env.SOFTWARE_AGENT_API_KEY ?? "",
+            SOFTWARE_AGENT_BASE_URL: process.env.SOFTWARE_AGENT_BASE_URL ?? process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com",
+            SOFTWARE_AGENT_MODEL: process.env.SOFTWARE_AGENT_MODEL ?? process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
             DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY ?? "",
             DEEPSEEK_BASE_URL: process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com",
             DEEPSEEK_MODEL: process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash",
