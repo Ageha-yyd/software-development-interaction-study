@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { createServer } from "node:http";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -25,21 +26,75 @@ function postAction(body) {
   });
 }
 
-test("renders the legacy anonymous prototype shell without authentication", async () => {
-  const response = await render("/?condition=chat_widget");
+async function withMockChatCompletion(content, operation) {
+  const requests = [];
+  const server = createServer(async (request, response) => {
+    const chunks = [];
+    for await (const chunk of request) chunks.push(chunk);
+    requests.push({
+      method: request.method,
+      url: request.url,
+      authorization: request.headers.authorization,
+      body: Buffer.concat(chunks).toString("utf8"),
+    });
+    response.writeHead(200, { "content-type": "application/json", "x-request-id": "mock-software-agent-request" });
+    response.end(JSON.stringify({
+      choices: [{ message: { content }, finish_reason: "stop" }],
+      usage: { prompt_tokens: 100, completion_tokens: 30, total_tokens: 130 },
+    }));
+  });
+  await new Promise((resolve, reject) => {
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", resolve);
+  });
+  const address = server.address();
+  assert.ok(address && typeof address !== "string");
+  try {
+    return await operation(`http://127.0.0.1:${address.port}`, requests);
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+const softwareAgentEnvironmentNames = [
+  "SOFTWARE_AGENT_API_KEY",
+  "SOFTWARE_AGENT_BASE_URL",
+  "SOFTWARE_AGENT_MODEL",
+  "DEEPSEEK_API_KEY",
+  "DEEPSEEK_BASE_URL",
+  "DEEPSEEK_MODEL",
+];
+
+async function withSoftwareAgentEnvironment(values, operation) {
+  const previous = new Map(softwareAgentEnvironmentNames.map((name) => [name, process.env[name]]));
+  for (const name of softwareAgentEnvironmentNames) delete process.env[name];
+  for (const [name, value] of Object.entries(values)) process.env[name] = value;
+  try {
+    return await operation();
+  } finally {
+    for (const name of softwareAgentEnvironmentNames) {
+      const value = previous.get(name);
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+}
+
+test("renders the software development experiment base without authentication", async () => {
+  const response = await render("/?preview=1&condition=B");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /Stock Intent Lab V3\.3/);
+  assert.match(html, /软件产品开发实验基座/);
+  assert.match(html, /正在准备冻结实验基线/);
   assert.doesNotMatch(html, /signin-with-chatgpt|requireChatGPTUser|ChatGPT 登录/);
 });
 
-test("preserves the legacy V3.3 prototype as a separate route contract", async () => {
+test("routes the project root through the generic software experiment shell", async () => {
   const page = await readFile(new URL("app/page.tsx", root), "utf8");
-  assert.match(page, /Array\.from\(\{ length: 8 \}/);
-  assert.match(page, /qualified_initial_exposure/);
-  assert.match(page, /agent_strategy_state/);
-  assert.match(page, /formal_data_collection:\s*false/);
+  assert.match(page, /ExperimentShell/);
+  assert.match(page, /SOFTWARE_PRODUCT_DEVELOPMENT_V1/);
+  assert.doesNotMatch(page, /ALFA|BETA|GAMMA|Stock Intent Lab/);
 });
 
 test("renders the V5.1 coding-agent surface without redesigning it", async () => {
@@ -300,4 +355,116 @@ test("does not expose the DeepSeek credential to client code", async () => {
   assert.match(route, /cloudflare:workers/);
   assert.doesNotMatch(page, /DEEPSEEK_API_KEY|NEXT_PUBLIC_DEEPSEEK|VITE_DEEPSEEK/);
   assert.match(example, /^DEEPSEEK_API_KEY=$/m);
+});
+
+test("exposes a software-specific model proxy with server-only configuration", async () => {
+  const missing = await withSoftwareAgentEnvironment(
+    {},
+    () => dispatch("/api/software-agent", { headers: { accept: "application/json" } }),
+  );
+  assert.equal(missing.status, 200);
+  assert.deepEqual(await missing.json(), {
+    configured: false,
+    mode: "deterministic_local_lookup",
+    model: "deepseek-v4-flash",
+    provider: "api.deepseek.com",
+  });
+
+  const configured = await withSoftwareAgentEnvironment(
+    {
+      SOFTWARE_AGENT_API_KEY: "test-key",
+      SOFTWARE_AGENT_BASE_URL: "https://models.example.test/v1",
+      SOFTWARE_AGENT_MODEL: "fixture-model",
+    },
+    () => dispatch("/api/software-agent", { headers: { accept: "application/json" } }),
+  );
+  assert.equal(configured.status, 200);
+  const configuration = await configured.json();
+  assert.equal(configuration.configured, true);
+  assert.equal(configuration.mode, "remote_chat_completion");
+  assert.equal(configuration.model, "fixture-model");
+  assert.equal(configuration.provider, "models.example.test");
+  assert.equal(JSON.stringify(configuration).includes("test-key"), false);
+});
+
+test("calls an OpenAI-compatible software model with the frozen condition-neutral envelope", async () => {
+  await withMockChatCompletion(
+    "可以先把 [[INFO:PRODUCT-GOAL-R0|快速保存链接]] 和可靠找回作为底线，再讨论页面组织。",
+    async (baseUrl, requests) => {
+      const response = await withSoftwareAgentEnvironment(
+        {
+          SOFTWARE_AGENT_API_KEY: "test-key",
+          SOFTWARE_AGENT_BASE_URL: baseUrl,
+          SOFTWARE_AGENT_MODEL: "fixture-model",
+        },
+        () => dispatch(
+          "/api/software-agent",
+          {
+            method: "POST",
+            headers: { "content-type": "application/json", accept: "application/json" },
+            body: JSON.stringify({
+              scenarioId: "software-product-development-v1",
+              messages: [{ role: "user", content: "这个产品到底要守住什么？" }],
+              visibleOrdinal: 7,
+              contextNodeIds: ["INFO:PRODUCT-GOAL-R0"],
+            }),
+          },
+        ),
+      );
+      assert.equal(response.status, 200);
+      const body = await response.json();
+      assert.equal(body.mode, "remote_chat_completion");
+      assert.equal(body.model, "fixture-model");
+      assert.equal(body.requestId, "mock-software-agent-request");
+      assert.deepEqual(body.nodeIds, ["INFO:PRODUCT-GOAL-R0"]);
+      assert.ok(body.groundedNodeIds.includes("INFO:PRODUCT-GOAL-R0"));
+      assert.equal(body.evidenceEnvelopeHash.length, 64);
+      assert.equal(requests.length, 1);
+      assert.equal(requests[0].method, "POST");
+      assert.equal(requests[0].url, "/chat/completions");
+      assert.equal(requests[0].authorization, "Bearer test-key");
+      const upstreamBody = JSON.parse(requests[0].body);
+      assert.equal(upstreamBody.model, "fixture-model");
+      assert.equal("max_tokens" in upstreamBody, false);
+      assert.match(upstreamBody.messages[0].content, /唯一事实来源/);
+      assert.match(upstreamBody.messages[0].content, /INFO:PRODUCT-GOAL-R0/);
+      assert.doesNotMatch(upstreamBody.messages[0].content, /A · Chat|B · Chat|Chat-only|Chat \+ Object/);
+      assert.deepEqual(upstreamBody.messages.at(-1), { role: "user", content: "这个产品到底要守住什么？" });
+    },
+  );
+});
+
+test("rejects condition leakage and missing software model credentials", async () => {
+  const missingKey = await withSoftwareAgentEnvironment(
+    {},
+    () => dispatch("/api/software-agent", {
+      method: "POST",
+      headers: { "content-type": "application/json", accept: "application/json" },
+      body: JSON.stringify({
+        scenarioId: "software-product-development-v1",
+        messages: [{ role: "user", content: "现在是什么状态？" }],
+        visibleOrdinal: 7,
+      }),
+    }),
+  );
+  assert.equal(missingKey.status, 503);
+
+  const leakedCondition = await withSoftwareAgentEnvironment(
+    { SOFTWARE_AGENT_API_KEY: "test-key" },
+    () => dispatch(
+      "/api/software-agent",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json", accept: "application/json" },
+        body: JSON.stringify({
+          scenarioId: "software-product-development-v1",
+          messages: [{ role: "user", content: "现在是什么状态？" }],
+          visibleOrdinal: 7,
+          condition: "B",
+        }),
+      },
+    ),
+  );
+  assert.equal(leakedCondition.status, 400);
+  assert.match((await leakedCondition.json()).error, /请求字段无效/);
 });
