@@ -1,0 +1,15 @@
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"A-chat-only","period":1,"scenarioId":"software-common-v42-local-portability","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"A-chat-only","period":2,"scenarioId":"software-common-v42-compound-portability","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"A-chat-only","period":3,"scenarioId":"software-common-v42-local-state","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"A-chat-only","period":4,"scenarioId":"software-common-v42-compound-state","objectOpened":false,"goldAssessed":false}
+file:///D:/github%20repository/CHI/software-development-interaction-study/scripts/research-v42-browser-smoke.mjs:106
+      if (!text.includes(value)) throw new Error(`text_not_visible:${value}`);
+                                       ^
+
+Error: text_not_visible:信息坐标
+    at file:///D:/github%20repository/CHI/software-development-interaction-study/scripts/research-v42-browser-smoke.mjs:106:40
+    at async retry (file:///D:/github%20repository/CHI/software-development-interaction-study/scripts/research-v42-browser-smoke.mjs:36:18)
+    at async runResearch (file:///D:/github%20repository/CHI/software-development-interaction-study/scripts/research-v42-browser-smoke.mjs:244:9)
+    at async file:///D:/github%20repository/CHI/software-development-interaction-study/scripts/research-v42-browser-smoke.mjs:380:40
+
+Node.js v24.19.0

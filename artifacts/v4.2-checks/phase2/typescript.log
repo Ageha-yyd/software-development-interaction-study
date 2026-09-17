@@ -1,0 +1,7 @@
+app/api/deepseek/route.ts(8,38): error TS2307: Cannot find module 'cloudflare:workers' or its corresponding type declarations.
+app/api/software-agent/route.ts(48,41): error TS2307: Cannot find module 'cloudflare:workers' or its corresponding type declarations.
+db/index.ts(1,21): error TS2307: Cannot find module 'cloudflare:workers' or its corresponding type declarations.
+lib/stock-v5-registry.ts(269,103): error TS2345: Argument of type 'StockV5Object | undefined' is not assignable to parameter of type 'StockV5Object'.
+  Type 'undefined' is not assignable to type 'StockV5Object'.
+worker/index.ts(6,11): error TS2304: Cannot find name 'Fetcher'.
+worker/index.ts(7,7): error TS2552: Cannot find name 'D1Database'. Did you mean 'IDBDatabase'?

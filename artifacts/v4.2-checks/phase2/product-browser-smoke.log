@@ -1,0 +1,26 @@
+{
+  "completed": true,
+  "validationClass": "real_UI_and_kernel_with_mock_provider",
+  "results": [
+    {
+      "condition": "A",
+      "naturalLanguageProvider": "engineering_mock_only",
+      "prepareDidNotExecute": true,
+      "directScopedCandidate": true,
+      "evaluationPublishedAndDownloaded": true,
+      "adoptionAndRollbackExecuted": true,
+      "lostResponseRecoveryExercised": false,
+      "humanEvidence": false
+    },
+    {
+      "condition": "B",
+      "naturalLanguageProvider": "engineering_mock_only",
+      "prepareDidNotExecute": true,
+      "directScopedCandidate": true,
+      "evaluationPublishedAndDownloaded": true,
+      "adoptionAndRollbackExecuted": true,
+      "lostResponseRecoveryExercised": true,
+      "humanEvidence": false
+    }
+  ]
+}

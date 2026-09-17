@@ -1,4 +1,45 @@
-# 软件产品开发实验：内部参与者内容库存
+# 软件产品开发实验：内部参与者内容库存 v4.2
+
+更新：2026-09-12。现行合同与首批支持面见 [v4.2 研究协议](software-product-development-v1-research-protocol-v4.2.md)。新 E0 使用 `scenarios/materials/reading-list-e0-v4.2.mjs` 的作者构造 ledger，不是恢复历史记录；四共同机会使用 `common-opportunities-v4.2.mjs`。本文旧包仍属 authoring library，未闭合包不因文案写了“已完成”就具备发布资格。真实参与者的界面成本与决定质量另行采集。
+
+## v4.1 材料清单与放行条件
+
+每个 packet 必须绑定 exact subject revision/request、record inventory、aggregation rule、公开字段、缺失项和来源。同一语义请求的 A/B projection 相同；多字段或“全部案例”请求可直接取得完整 scoped packet，不强制层层点击。没有逐案动机时保持 unknown，不根据路径或停留补出心理解释。
+
+| 材料 | 已有 authoring 锚点 | 需要闭合的逐案记录与复算 | 当前 disposition |
+| --- | --- | --- | --- |
+| R0 D4 | 144 保存、72 找回，其中 48 延迟、21 双入口；D4 membership 57 | 144 item ledger；72 task ledger 含 48/24 分组；21/27 partition；63 ever-membership 与 D4 57 的事件复算；8 notes 单独映射范围 | authoring_pending，不凭摘要声称 raw corpus 完整 |
+| Linked candidate O1 | 匹配 R0 20/48、候选 7/48；3/40 撤销 | 40 batch 逐案前后 membership、选择来源、预览与 inverse；三次均可访问；48 matched-task 对照 | authoring_pending；20/48 是匹配评价基线，不替换 E0 的21/48 |
+| V maintenance O3 | 4 次维护；一条改名有细节 | 其余三条各自的操作、原名称/范围、修改、revision、provenance 与撤销记录；不可复制首条充数 | packet_unavailable，齐备前不播采用成功 |
+| R0 D30 crosscase | membership 57→71；9 条重复重组；因子边际 6/5/4 | 9-row 因子表、每条至少两次重组事件、因子定义、允许重叠的复算；组外稳定反例独立保存 | authoring_pending；撤销未证实的交叉组合细数 |
+| R0 24-task boundary | checking/reconstruction/direct = 9/7/8 | 每任务分类依据与原说明；7 中 5 个多因子、8 中6个简单情境的独立复算；无凭据不得推断类别 | authoring_pending |
+| Focus 首次/修订 | 36-task、12-conflict、采用/不采用 | 两个 exact state 各自的 matched protocol、全部冲突来源及最后选择；首次正确和澄清后正确分开 | authoring_pending；不可借带提醒版本数据 |
+| 技术保护项 | identity、payload、Search、portability、route、a11y | 对当前实际候选执行检查，绑定代码/状态 revision；三类访问协议各自的时间/动作分母与六 ratio | engineering_receipt_required；1.20 是作者设定的候选阈值，非已验证可访问性标准 |
+| 四个共同机会与两个 directed controls | 架构 v4.1 的触发/Gold 语义 | trigger 内容、required evidence sets、允许缺失、verifier、counterbalance、clock 与公开任务说明 | spec_pending，不能计算正式 effect |
+
+### 每条记录的最低内容
+
+`recordId, packetRef, subjectRevision, protocolRef, scenarioProfileRef, taskRef, startState, orderedObservableEvents, endState, sourceRefs, missingFields, evidenceClass`。
+
+事件分别记录实际操作、结果、来源与当时状态；未记录的动机不填。场景的 seconds/day 属于模拟任务时钟，与研究参与者的 monotonic clock 分离。聚合保存 numerator IDs、denominator IDs、排除和缺失规则；同一条目多次出现不能被算成不同参与者。
+
+### 同一信息的请求样例
+
+| 请求 | A 与 B 共同返回的内容 | 不允许的替代 |
+| --- | --- | --- |
+| “给我全部三次撤销以及前后状态” | 同一候选的三条完整记录与作用范围 | A 拆成强制三轮，B 直接全部提供 |
+| “不要最糟的，换一个普通例子” | 预先固定的 case selection policy、符合条件的案例及覆盖限制 | 按条件挑不同难度或选择最能支持改版的例子 |
+| “比较 R0 和候选的这条资料” | 相同 identity、两个 revision 的可用状态/任务和差异 | 用一个候选的效果代替另一个候选 |
+| “这四次维护平均多重” | 仅在四条任务时间完整且同一口径时算；否则明确缺失 | 从唯一详细案例估算四条平均 |
+| “这些数字来自谁” | 模拟画像、任务 inventory、protocol 与来源状态 | 把画像叫作本实验招募参与者 |
+
+### 先闭合的代表性经历
+
+首批闭合 R0 E0→Linked C1→一次有依据的 scoped C2，并保持不改版、丢弃未采用候选、合理暂缓与已支持替代请求。D30、V O3、Focus、Context 和组合包列为后续独立 authoring，不是首版必做路线。没有 packet 时记录缺口，不挪用另一候选结果。任一核验链都必须允许不同问题与合理终态，不能用关键字匹配作者 dialogue。
+
+### 发布与结果的分层
+
+内容齐备只授予 `content_candidate`；汇总复算只授予材料一致；代码检查只授予工程事实；形成性只授予该次体验观察。实际研究效果仍需要合格的真实参与者记录及已冻结分析。旧结束文案中的“所有检查完成/采用成功”均受当前 exact-state、packet 和 explicit disposition 门约束。
 
 这份文件保存冻结内容、数值、版本状态和证据边界，供内部生成和核对使用；它不是逐字播放给参与者的对话。参与者实际消费的连续自然对话见 `software-product-development-v1-participant-consumed-script.md`。花括号内是运行时数据槽位。
 
@@ -8,7 +49,7 @@
 
 - 先读取当前 `Frontier`、exact product state、EpistemicState 与剩余 output horizon，再决定哪些已冻结 packet 合法；不得根据参与者关键词选择最相近剧情。
 - Baseline 从 H01–H07 的七组既有 User–Agent 开发历史累积形成；当前参与者必须在 H08 现场用自己的话接回状态，H09 授权观察后才稳定发布 E0。每轮实际改动、用户理由、被拒绝的简化和验证都必须保留。下面的“当前产品”“历史索引”等旧卡片只能作为已自然提及对象的按需投影，不能在开场一次展示。
-- 每个新 output 发布 `headline + 2–4 个新建/更新/重新打开的自然对象提及 + boundary`；aggregate 可以出现在顶层复合 Trigger，cohort、exception、trace、raw event 和 receipt 只随 Probe 展开，不能把整节内容一次塞进 Agent 回复。
+- 每个新 output 按实际请求发布事实、必要上下文与 boundary；对象提及数量是可读性参考而非固定配额。允许复合查询一次返回多个层级，不能以渐进揭示为由限制 A 的合理请求；未请求的未来证据仍受 publication gate 约束。
 - 每轮维护 `RecentOutputDelta(new/updated/reopened/stale/unanswered)` 与 participant-stated motive line；点击或对象选择不能被编码为人的动机，未追的开放线变为 dormant 而不是删除。
 - 跨 packet cluster 的回看、重新 framing、discard/rollback 后 verified rebase 是合法路径；candidate-specific outcome 不能移植到另一 state。
 - `L+F/L+V/F+V` pair state 在各自 interaction packet 完成前属于 required authoring surface，不能把两个单项段落拼起来冒充 pair result。

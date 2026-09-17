@@ -86,7 +86,7 @@ test("renders the software development experiment base without authentication", 
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
   assert.match(html, /软件产品开发实验基座/);
-  assert.match(html, /正在准备冻结实验基线/);
+  assert.match(html, /正在准备 v4 信息空间试用/);
   assert.doesNotMatch(html, /signin-with-chatgpt|requireChatGPTUser|ChatGPT 登录/);
 });
 
@@ -368,6 +368,13 @@ test("exposes a software-specific model proxy with server-only configuration", a
     mode: "deterministic_local_lookup",
     model: "deepseek-v4-flash",
     provider: "api.deepseek.com",
+    transcriptLimits: {
+      maxMessages: 256,
+      maxMessageCharacters: 256_000,
+      maxTranscriptCharacters: 1_000_000,
+      maxRequestBytes: 8_388_608,
+      maxCanonicalMaterialCharacters: 256_000,
+    },
   });
 
   const configured = await withSoftwareAgentEnvironment(
@@ -387,9 +394,9 @@ test("exposes a software-specific model proxy with server-only configuration", a
   assert.equal(JSON.stringify(configuration).includes("test-key"), false);
 });
 
-test("calls an OpenAI-compatible software model with the frozen condition-neutral envelope", async () => {
+test("calls an OpenAI-compatible software model with a condition-neutral v4 Frontier packet", async () => {
   await withMockChatCompletion(
-    "可以先把 [[INFO:PRODUCT-GOAL-R0|快速保存链接]] 和可靠找回作为底线，再讨论页面组织。",
+    "可以先把快速保存链接和可靠找回作为底线，再讨论页面组织。",
     async (baseUrl, requests) => {
       const response = await withSoftwareAgentEnvironment(
         {
@@ -405,7 +412,7 @@ test("calls an OpenAI-compatible software model with the frozen condition-neutra
             body: JSON.stringify({
               scenarioId: "software-product-development-v1",
               messages: [{ role: "user", content: "这个产品到底要守住什么？" }],
-              visibleOrdinal: 7,
+              frontierStage: "history",
               contextNodeIds: ["INFO:PRODUCT-GOAL-R0"],
             }),
           },
@@ -418,6 +425,7 @@ test("calls an OpenAI-compatible software model with the frozen condition-neutra
       assert.equal(body.requestId, "mock-software-agent-request");
       assert.deepEqual(body.nodeIds, ["INFO:PRODUCT-GOAL-R0"]);
       assert.ok(body.groundedNodeIds.includes("INFO:PRODUCT-GOAL-R0"));
+      assert.match(body.frontierRef, /^FRONTIER:v4\.2-e0:history:/);
       assert.equal(body.evidenceEnvelopeHash.length, 64);
       assert.equal(requests.length, 1);
       assert.equal(requests[0].method, "POST");
@@ -426,10 +434,78 @@ test("calls an OpenAI-compatible software model with the frozen condition-neutra
       const upstreamBody = JSON.parse(requests[0].body);
       assert.equal(upstreamBody.model, "fixture-model");
       assert.equal("max_tokens" in upstreamBody, false);
-      assert.match(upstreamBody.messages[0].content, /唯一事实来源/);
+      assert.match(upstreamBody.messages[0].content, /完整对话中已披露的同版本材料是场景事实来源/);
       assert.match(upstreamBody.messages[0].content, /INFO:PRODUCT-GOAL-R0/);
+      assert.match(upstreamBody.messages[0].content, /信息空间版本：v4\.2-e0/);
+      assert.doesNotMatch(upstreamBody.messages[0].content, /当前可见序号/);
       assert.doesNotMatch(upstreamBody.messages[0].content, /A · Chat|B · Chat|Chat-only|Chat \+ Object/);
       assert.deepEqual(upstreamBody.messages.at(-1), { role: "user", content: "这个产品到底要守住什么？" });
+    },
+  );
+});
+
+test("retrieves an E0 concrete trace without publishing future candidate material", async () => {
+  await withMockChatCompletion(
+    "可以看 [[TRACE:R0-REFIND-017|Offline-first 具体找回轨迹]]：它保留了事件顺序，但没有把行为预先解释成迷路。",
+    async (baseUrl, requests) => {
+      const response = await withSoftwareAgentEnvironment(
+        {
+          SOFTWARE_AGENT_API_KEY: "test-key",
+          SOFTWARE_AGENT_BASE_URL: baseUrl,
+          SOFTWARE_AGENT_MODEL: "fixture-model",
+        },
+        () => dispatch("/api/software-agent", {
+          method: "POST",
+          headers: { "content-type": "application/json", accept: "application/json" },
+          body: JSON.stringify({
+            scenarioId: "software-product-development-v1",
+            messages: [{ role: "user", content: "给我 R0-REFIND-017 的具体案例" }],
+            frontierStage: "e0",
+            contextNodeIds: ["EVIDENCE:REFIND-PATHS-R0-01"],
+          }),
+        }),
+      );
+      assert.equal(response.status, 200);
+      const body = await response.json();
+      assert.deepEqual(body.nodeIds, ["TRACE:R0-REFIND-017"]);
+      assert.ok(body.groundedNodeIds.includes("TRACE:R0-REFIND-017"));
+      assert.ok(!body.packetNodeIds.includes("RAWSET:NAV-017-01-04"));
+      assert.deepEqual(body.requestedNodeIds, ["TRACE:R0-REFIND-017"]);
+      assert.match(body.frontierRef, /^FRONTIER:v4\.2-e0:e0:/);
+      const upstreamBody = JSON.parse(requests[0].body);
+      assert.match(upstreamBody.messages[0].content, /TRACE:R0-REFIND-017/);
+      assert.doesNotMatch(upstreamBody.messages[0].content, /CANDIDATE:C1|长期证据|D30/);
+    },
+  );
+});
+
+test("rejects generic object labels and re-anchors only exact representative phrases", async () => {
+  await withMockChatCompletion(
+    "[[INFO:PRODUCT-GOAL-R0|这个目标]]首先要求快速保存链接，同时保留可靠找回。",
+    async (baseUrl) => {
+      const response = await withSoftwareAgentEnvironment(
+        {
+          SOFTWARE_AGENT_API_KEY: "test-key",
+          SOFTWARE_AGENT_BASE_URL: baseUrl,
+          SOFTWARE_AGENT_MODEL: "fixture-model",
+        },
+        () => dispatch("/api/software-agent", {
+          method: "POST",
+          headers: { "content-type": "application/json", accept: "application/json" },
+          body: JSON.stringify({
+            scenarioId: "software-product-development-v1",
+            messages: [{ role: "user", content: "这个产品到底要守住什么？" }],
+            frontierStage: "history",
+            contextNodeIds: ["INFO:PRODUCT-GOAL-R0"],
+          }),
+        }),
+      );
+      assert.equal(response.status, 200);
+      const body = await response.json();
+      assert.equal(body.invalidAnchorCount, 1);
+      assert.doesNotMatch(body.message, /\|这个目标/);
+      assert.match(body.message, /\[\[INFO:PRODUCT-GOAL-R0\|快速保存链接\]\]/);
+      assert.deepEqual(body.nodeIds, ["INFO:PRODUCT-GOAL-R0"]);
     },
   );
 });
@@ -443,7 +519,7 @@ test("rejects condition leakage and missing software model credentials", async (
       body: JSON.stringify({
         scenarioId: "software-product-development-v1",
         messages: [{ role: "user", content: "现在是什么状态？" }],
-        visibleOrdinal: 7,
+        frontierStage: "history",
       }),
     }),
   );
@@ -459,7 +535,7 @@ test("rejects condition leakage and missing software model credentials", async (
         body: JSON.stringify({
           scenarioId: "software-product-development-v1",
           messages: [{ role: "user", content: "现在是什么状态？" }],
-          visibleOrdinal: 7,
+          frontierStage: "history",
           condition: "B",
         }),
       },
@@ -467,4 +543,19 @@ test("rejects condition leakage and missing software model credentials", async (
   );
   assert.equal(leakedCondition.status, 400);
   assert.match((await leakedCondition.json()).error, /请求字段无效/);
+  const leakedRevealState = await withSoftwareAgentEnvironment(
+    { SOFTWARE_AGENT_API_KEY: "test-key" },
+    () => dispatch("/api/software-agent", {
+      method: "POST",
+      headers: { "content-type": "application/json", accept: "application/json" },
+      body: JSON.stringify({
+        scenarioId: "software-product-development-v1",
+        messages: [{ role: "user", content: "现在是什么状态？" }],
+        frontierStage: "history",
+        revealedNodeIds: ["TRACE:R0-REFIND-017"],
+      }),
+    }),
+  );
+  assert.equal(leakedRevealState.status, 400);
+  assert.match((await leakedRevealState.json()).error, /请求字段无效/);
 });

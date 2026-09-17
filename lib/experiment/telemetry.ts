@@ -24,6 +24,7 @@ export class BrowserTelemetrySession {
   readonly sessionId = newSessionId();
   readonly scenarioId: string;
   #entries: ExperimentEvent[] = [];
+  #persistenceError: string | null = null;
 
   constructor(scenarioId: string) {
     this.scenarioId = scenarioId;
@@ -48,13 +49,24 @@ export class BrowserTelemetrySession {
       payload: Object.freeze({ ...payload }),
     });
     this.#entries.push(entry);
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem(
-        `experiment-preview:${this.scenarioId}:${this.sessionId}`,
-        JSON.stringify(this.#entries),
-      );
+    try {
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem(
+          `experiment-preview:${this.scenarioId}:${this.sessionId}`,
+          JSON.stringify(this.#entries),
+        );
+        this.#persistenceError = null;
+      }
+    } catch (error) {
+      // Preserve the complete in-memory log and the caller's capture path when
+      // browser persistence is unavailable; never truncate research records.
+      this.#persistenceError = error instanceof Error ? `${error.name}: ${error.message}` : String(error);
     }
     return entry;
+  }
+
+  get persistenceError(): string | null {
+    return this.#persistenceError;
   }
 
   entries(): readonly ExperimentEvent[] {

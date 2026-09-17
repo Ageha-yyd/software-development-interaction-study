@@ -1,0 +1,25 @@
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-chat-only","period":1,"scenarioId":"software-common-v42-local-portability","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-chat-only","period":2,"scenarioId":"software-common-v42-compound-portability","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-chat-only","period":3,"scenarioId":"software-common-v42-local-state","objectOpened":false,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-chat-only","period":4,"scenarioId":"software-common-v42-compound-state","objectOpened":false,"goldAssessed":false}
+{
+  "validationClass": "automated_engineering_browser_smoke",
+  "informationSpaceVersion": "v4.2-e0",
+  "humanEfficiencyEvidence": false,
+  "formalStudyData": false,
+  "results": [
+    {
+      "label": "B-chat-only",
+      "condition": "B",
+      "useObjects": false,
+      "sessionCount": 6,
+      "dispositionCount": 9,
+      "objectsOpened": 0,
+      "fullResponsesPreserved": true,
+      "exposureReferencesVerified": true,
+      "goldAssessed": false
+    }
+  ],
+  "workbench": null,
+  "completed": true
+}

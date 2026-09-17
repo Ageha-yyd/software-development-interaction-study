@@ -1,0 +1,1978 @@
+{
+  "schemaVersion": "software-development-v4.2-review-packet",
+  "reviewPacketId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+  "evidenceClass": "engineering_preview_interaction_record",
+  "formalStudyData": false,
+  "allocation": {
+    "condition": "B",
+    "sequence": 0,
+    "source": "researcher_preview_override",
+    "allocatedAtMonotonicMs": 249.79999999701977,
+    "baselineSemanticStatus": "manual_review_pending",
+    "formalAssignment": false
+  },
+  "baselineCheck": {
+    "participantOriginalText": "工程走查原文：我要保留条目身份，集合归属与待处理状态分开看；回执只能支持其对应版本和范围。此文字尚未经过人的理解核对。",
+    "submittedAtMonotonicMs": 249.69999999552965,
+    "sourceSessionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+    "reviewStatus": "manual_review_pending",
+    "automaticallyQualified": false,
+    "promptVersion": "shared-baseline-account-v4.2"
+  },
+  "currentStage": "review-complete",
+  "clock": "single_document_performance_now",
+  "clockTimeOrigin": 1789201888068.6,
+  "exportedAtMonotonicMs": 1988.8999999985099,
+  "sessions": {
+    "8c14830b-365c-4c7e-89fa-678cb34aafb0": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+        "sequence": 1,
+        "scenarioId": "software-product-development-v1",
+        "condition": "A",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:28.188Z",
+        "monotonicMs": 120.29999999701977,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:bcf04133",
+          "assignmentSource": "session_assignment",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+        "sequence": 2,
+        "scenarioId": "software-product-development-v1",
+        "condition": "A",
+        "phase": "baseline",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:28.283Z",
+        "monotonicMs": 215.09999999403954,
+        "payload": {
+          "interactionStartMonotonicMs": 214.79999999701977,
+          "rawText": "工程走查：这个产品到底要守住什么？",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:430b1273",
+          "revealedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:SAVE-RULES-R0",
+            "INFO:ORTHOGONAL-STATES-R0",
+            "INFO:SEARCH-IDENTITY-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+        "sequence": 3,
+        "scenarioId": "software-product-development-v1",
+        "condition": "A",
+        "phase": "baseline",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:28.288Z",
+        "monotonicMs": 219.69999999552965,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ],
+          "requestedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0"
+          ],
+          "groundedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "当前场景规定 R0 可保存与找回资料，且没有已确定的下一项改版。产品目标是快速保存并[[INFO:PRODUCT-GOAL-R0|可靠找回]]；下面保留目标、约束和场景基线。",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:430b1273",
+          "traversedRelationIds": [
+            "EDGE:GOAL:GUARDS"
+          ],
+          "packetNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0",
+            "INFO:SAVE-RULES-R0",
+            "INFO:ORTHOGONAL-STATES-R0",
+            "INFO:SEARCH-IDENTITY-R0"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0",
+        "sequence": 4,
+        "scenarioId": "software-product-development-v1",
+        "condition": "A",
+        "phase": "baseline",
+        "event": "baseline_takeover_exchange_completed",
+        "timestampUtc": "2026-09-12T08:31:28.288Z",
+        "monotonicMs": 219.79999999701977,
+        "payload": {
+          "participantText": "工程走查：这个产品到底要守住什么？",
+          "responseNodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ]
+        }
+      }
+    ],
+    "61b150c5-f78b-4e12-a851-451fa33cf72b": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 1,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:28.324Z",
+        "monotonicMs": 256.09999999403954,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:02603475",
+          "assignmentSource": "researcher_preview",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 2,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "trigger_reveal_started",
+        "timestampUtc": "2026-09-12T08:31:28.455Z",
+        "monotonicMs": 386.59999999403954,
+        "payload": {
+          "interactionStartMonotonicMs": 386.5
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 3,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "pre_result_goal_acknowledged",
+        "timestampUtc": "2026-09-12T08:31:28.455Z",
+        "monotonicMs": 386.69999999552965,
+        "payload": {
+          "interactionStartMonotonicMs": 386.5,
+          "liveBaselineMessageCount": 0
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 4,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_revealed",
+        "timestampUtc": "2026-09-12T08:31:28.455Z",
+        "monotonicMs": 386.79999999701977,
+        "payload": {
+          "revealOrdinal": 3,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:fd27b1df",
+          "newlyVisibleNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:TASK",
+            "INFO:COMMON:LOCAL-STATE:TRIGGER",
+            "INFO:COMMON:LOCAL-STATE:INDEX"
+          ],
+          "availableProbeNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:ALL",
+            "EVIDENCE:AS:ITEM-201",
+            "EVIDENCE:AS:VIEW-RULE",
+            "EVIDENCE:AS:EVENT"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 5,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:28.455Z",
+        "monotonicMs": 386.8999999985099,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:LOCAL-STATE:TASK",
+            "INFO:COMMON:LOCAL-STATE:TRIGGER",
+            "INFO:COMMON:LOCAL-STATE:INDEX"
+          ],
+          "frontierRef": "FRONTIER:v4.2-e0:e0:fd27b1df",
+          "mode": "frozen_trigger_turn",
+          "responseText": "[[INFO:COMMON:LOCAL-STATE:TASK|本次团队任务]]\n保持这个阅读清单的可靠保存与找回，根据接下来的产品结果判断是否需要调整当前产品。请核对涉及的对象、当前状态、适用规则和证据版本，给出与可用证据一致的处置，说明采用或保留的范围及仍未解决的问题。若暂缓，指出实际缺口如何影响下一动作，以及需要补充什么信息或检查。\n\n[[INFO:COMMON:LOCAL-STATE:TRIGGER|新到的项目结果]]\nRelease checklist 的新报告已到达：“刚归到 Delivery 后，在 Unsorted 中找不到它。”条目状态、最近操作和现有视图定义均可查询；当前没有修改产品。\n\n[[INFO:COMMON:LOCAL-STATE:INDEX|本机会材料索引]]\n条目当时状态；现有视图定义；最近一次归组事件。可按问题查询，也可一次请求全部本机会材料。"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 6,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_stable_visible",
+        "timestampUtc": "2026-09-12T08:31:28.473Z",
+        "monotonicMs": 405.09999999403954,
+        "payload": {
+          "informationSpaceVersion": "v4.2-e0",
+          "visibilityState": "visible",
+          "exposureMethod": "trigger_intersects_viewport_across_two_frames",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 7,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:28.588Z",
+        "monotonicMs": 519.6999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 519.5999999940395,
+          "rawText": "请一次给我全部本机会材料以及每份资料的版本与来源。",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:fd27b1df",
+          "revealedNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:HISTORY",
+            "INFO:COMMON:LOCAL-STATE:TASK",
+            "INFO:COMMON:LOCAL-STATE:TRIGGER",
+            "INFO:COMMON:LOCAL-STATE:INDEX"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 8,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:28.590Z",
+        "monotonicMs": 521.3999999985099,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:LOCAL-STATE:ALL",
+            "EVIDENCE:AS:ITEM-201",
+            "EVIDENCE:AS:VIEW-RULE",
+            "EVIDENCE:AS:EVENT"
+          ],
+          "requestedNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:ALL",
+            "EVIDENCE:AS:ITEM-201",
+            "EVIDENCE:AS:VIEW-RULE",
+            "EVIDENCE:AS:EVENT"
+          ],
+          "groundedNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:ALL",
+            "EVIDENCE:AS:ITEM-201",
+            "EVIDENCE:AS:VIEW-RULE",
+            "EVIDENCE:AS:EVENT"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "[[INFO:COMMON:LOCAL-STATE:ALL|全部本机会材料]]\n\n以下均为预先构造的模拟场景记录。\n\n[[EVIDENCE:AS:ITEM-201|条目当时状态]]\n\n条目 Release checklist 在该记录时仍待处理，属于 Delivery Collection。\n\n来源：authored://common-opportunities-v4.2/AS:ITEM-201 · 对应版本：ANCHOR-STATE-R7 · 模拟场景记录\n\n[[EVIDENCE:AS:VIEW-RULE|现有视图定义]]\n\nInbox 表示待处理；Unsorted 表示没有 Collection 归属。修改归属不会自动更改待处理状态。\n\n来源：authored://common-opportunities-v4.2/AS:VIEW-RULE · 对应版本：ANCHOR-STATE-R7 · 模拟场景记录\n\n[[EVIDENCE:AS:EVENT|最近一次归组事件]]\n\n最近事件只为同一条目添加 Delivery membership，没有清除 Inbox，没有产生副本。\n\n来源：authored://common-opportunities-v4.2/AS:EVENT · 对应版本：ANCHOR-STATE-R7 · 模拟场景记录",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:fd27b1df",
+          "traversedRelationIds": [
+            "EDGE:COMMON:LOCAL-STATE:INDEX-0",
+            "EDGE:COMMON:LOCAL-STATE:INDEX-1",
+            "EDGE:COMMON:LOCAL-STATE:INDEX-2",
+            "EDGE:COMMON:LOCAL-STATE:INDEX-3"
+          ],
+          "packetNodeIds": [
+            "INFO:COMMON:LOCAL-STATE:ALL",
+            "EVIDENCE:AS:ITEM-201",
+            "EVIDENCE:AS:VIEW-RULE",
+            "EVIDENCE:AS:EVENT",
+            "INFO:COMMON:LOCAL-STATE:TASK",
+            "INFO:COMMON:LOCAL-STATE:TRIGGER",
+            "INFO:COMMON:LOCAL-STATE:INDEX"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 9,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_action_started",
+        "timestampUtc": "2026-09-12T08:31:28.598Z",
+        "monotonicMs": 529.5,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AS:EVENT",
+          "surface": "inline",
+          "interactionStartMonotonicMs": 529.2999999970198,
+          "initialPosition": {
+            "x": 567,
+            "y": 504.171875
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 10,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_visible",
+        "timestampUtc": "2026-09-12T08:31:28.598Z",
+        "monotonicMs": 529.6999999955297,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AS:EVENT",
+          "nodeId": "EVIDENCE:AS:EVENT",
+          "surface": "inline",
+          "initialPosition": {
+            "x": 567,
+            "y": 504.171875
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 11,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "evidence_text_presented",
+        "timestampUtc": "2026-09-12T08:31:28.598Z",
+        "monotonicMs": 529.8999999985099,
+        "payload": {
+          "sources": [
+            {
+              "text": "最近一次归组事件\n\n最近事件只为同一条目添加 Delivery membership，没有清除 Inbox，没有产生副本。",
+              "source": "authored://common-opportunities-v4.2/AS:EVENT · 对应版本：ANCHOR-STATE-R7 · 模拟场景记录",
+              "exactRevision": "ANCHOR-STATE-R7"
+            }
+          ],
+          "presentation": "requested_detail_body",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 12,
+        "scenarioId": "software-common-v42-local-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_closed",
+        "timestampUtc": "2026-09-12T08:31:28.718Z",
+        "monotonicMs": 650.2999999970198,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AS:EVENT"
+        }
+      }
+    ],
+    "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 1,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:28.774Z",
+        "monotonicMs": 706.0999999940395,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:7b83d603",
+          "assignmentSource": "researcher_preview",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 2,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "trigger_reveal_started",
+        "timestampUtc": "2026-09-12T08:31:28.884Z",
+        "monotonicMs": 816.1999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 816.0999999940395
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 3,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "pre_result_goal_acknowledged",
+        "timestampUtc": "2026-09-12T08:31:28.885Z",
+        "monotonicMs": 816.2999999970198,
+        "payload": {
+          "interactionStartMonotonicMs": 816.0999999940395,
+          "liveBaselineMessageCount": 0
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 4,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_revealed",
+        "timestampUtc": "2026-09-12T08:31:28.885Z",
+        "monotonicMs": 816.5,
+        "payload": {
+          "revealOrdinal": 3,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:a33c8a53",
+          "newlyVisibleNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:TASK",
+            "INFO:COMMON:COMPOUND-STATE:TRIGGER",
+            "INFO:COMMON:COMPOUND-STATE:INDEX"
+          ],
+          "availableProbeNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:ALL",
+            "EVIDENCE:AW:CHANGE",
+            "EVIDENCE:AW:SELECTION",
+            "EVIDENCE:AW:OLD-RECEIPT",
+            "EVIDENCE:AW:CURRENT-RECEIPTS",
+            "EVIDENCE:AW:ACTIVE-STATE"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 5,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:28.885Z",
+        "monotonicMs": 816.5999999940395,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:TASK",
+            "INFO:COMMON:COMPOUND-STATE:TRIGGER",
+            "INFO:COMMON:COMPOUND-STATE:INDEX"
+          ],
+          "frontierRef": "FRONTIER:v4.2-e0:e0:a33c8a53",
+          "mode": "frozen_trigger_turn",
+          "responseText": "[[INFO:COMMON:COMPOUND-STATE:TASK|本次团队任务]]\n保持这个阅读清单的可靠保存与找回，根据接下来的产品结果判断是否需要调整当前产品。请核对涉及的对象、当前状态、适用规则和证据版本，给出与可用证据一致的处置，说明采用或保留的范围及仍未解决的问题。若暂缓，指出实际缺口如何影响下一动作，以及需要补充什么信息或检查。\n\n[[INFO:COMMON:COMPOUND-STATE:TRIGGER|新到的项目结果]]\n联动候选的新预览已经返回，范围示例和检查索引可查看。团队准备判断是否采用；当前产品仍未切换。\n\n[[INFO:COMMON:COMPOUND-STATE:INDEX|本机会材料索引]]\n候选预览改动；本次选择与取消范围；预览历史检查回执；候选当前检查索引；项目当前采用状态。可按问题查询，也可一次请求全部本机会材料。"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 6,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_stable_visible",
+        "timestampUtc": "2026-09-12T08:31:28.907Z",
+        "monotonicMs": 838.7999999970198,
+        "payload": {
+          "informationSpaceVersion": "v4.2-e0",
+          "visibilityState": "visible",
+          "exposureMethod": "trigger_intersects_viewport_across_two_frames",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 7,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.008Z",
+        "monotonicMs": 939.6999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 939.6999999955297,
+          "rawText": "请一次给我全部本机会材料以及每份资料的版本与来源。",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:a33c8a53",
+          "revealedNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:HISTORY",
+            "INFO:COMMON:COMPOUND-STATE:TASK",
+            "INFO:COMMON:COMPOUND-STATE:TRIGGER",
+            "INFO:COMMON:COMPOUND-STATE:INDEX"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 8,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.010Z",
+        "monotonicMs": 941.5999999940395,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:ALL",
+            "EVIDENCE:AW:CHANGE",
+            "EVIDENCE:AW:SELECTION",
+            "EVIDENCE:AW:OLD-RECEIPT",
+            "EVIDENCE:AW:CURRENT-RECEIPTS",
+            "EVIDENCE:AW:ACTIVE-STATE"
+          ],
+          "requestedNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:ALL",
+            "EVIDENCE:AW:CHANGE",
+            "EVIDENCE:AW:SELECTION",
+            "EVIDENCE:AW:OLD-RECEIPT",
+            "EVIDENCE:AW:CURRENT-RECEIPTS",
+            "EVIDENCE:AW:ACTIVE-STATE"
+          ],
+          "groundedNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:ALL",
+            "EVIDENCE:AW:CHANGE",
+            "EVIDENCE:AW:SELECTION",
+            "EVIDENCE:AW:OLD-RECEIPT",
+            "EVIDENCE:AW:CURRENT-RECEIPTS",
+            "EVIDENCE:AW:ACTIVE-STATE"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "[[INFO:COMMON:COMPOUND-STATE:ALL|全部本机会材料]]\n\n以下均为预先构造的模拟场景记录。\n\n[[EVIDENCE:AW:CHANGE|候选预览改动]]\n\n候选新增逐项范围预览和取消单条控件。跨筛选显式选择仍保留，提交只改变 membership，Inbox 状态保持独立。\n\n来源：authored://common-opportunities-v4.2/AW:CHANGE · 对应版本：ANCHOR-WL-C2 · 模拟场景记录\n\n[[EVIDENCE:AW:SELECTION|本次选择与取消范围]]\n\n范围记录中的两个选中对象为 anchor-watch-item-311 与 anchor-watch-item-312。取消后只应提交 311；撤销须恢复该次 membership 差异，不能清除 Inbox。\n\n来源：authored://common-opportunities-v4.2/AW:SELECTION · 对应版本：ANCHOR-WL-C2 · 模拟场景记录\n\n[[EVIDENCE:AW:OLD-RECEIPT|预览历史检查回执]]\n\n旧检查覆盖 C1 的数量/来源预览、确认及整组撤销；当时没有逐项取消控件。它不能覆盖 C2 的取消后焦点与剩余选择。\n\n来源：authored://common-opportunities-v4.2/AW:OLD-RECEIPT · 对应版本：ANCHOR-WL-C1 · 模拟场景记录\n\n[[EVIDENCE:AW:CURRENT-RECEIPTS|候选当前检查索引]]\n\n本候选的身份和导出内容检查记录为通过；取消后的焦点、剩余选择与提交/撤销联合路径没有对应结果。\n\n来源：authored://common-opportunities-v4.2/AW:CURRENT-RECEIPTS · 对应版本：ANCHOR-WL-C2 · 模拟场景记录\n\n[[EVIDENCE:AW:ACTIVE-STATE|项目当前采用状态]]\n\n当前已采用产品仍是 ANCHOR-WL-R0；C2 隔离候选尚未采用，没有后台迁移。可以保留 R0，或明确缺口后暂缓候选。\n\n来源：authored://common-opportunities-v4.2/AW:ACTIVE-STATE · 对应版本：ANCHOR-WL-R0 · 模拟场景记录",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:a33c8a53",
+          "traversedRelationIds": [
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-0",
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-1",
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-2",
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-3",
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-4",
+            "EDGE:COMMON:COMPOUND-STATE:INDEX-5"
+          ],
+          "packetNodeIds": [
+            "INFO:COMMON:COMPOUND-STATE:ALL",
+            "EVIDENCE:AW:CHANGE",
+            "EVIDENCE:AW:SELECTION",
+            "EVIDENCE:AW:OLD-RECEIPT",
+            "EVIDENCE:AW:CURRENT-RECEIPTS",
+            "EVIDENCE:AW:ACTIVE-STATE",
+            "INFO:COMMON:COMPOUND-STATE:TASK",
+            "INFO:COMMON:COMPOUND-STATE:TRIGGER",
+            "INFO:COMMON:COMPOUND-STATE:INDEX"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 9,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.017Z",
+        "monotonicMs": 949.0999999940395,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AW:ACTIVE-STATE",
+          "surface": "inline",
+          "interactionStartMonotonicMs": 949.0999999940395,
+          "initialPosition": {
+            "x": 567,
+            "y": 504.1875
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 10,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_visible",
+        "timestampUtc": "2026-09-12T08:31:29.018Z",
+        "monotonicMs": 949.3999999985099,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AW:ACTIVE-STATE",
+          "nodeId": "EVIDENCE:AW:ACTIVE-STATE",
+          "surface": "inline",
+          "initialPosition": {
+            "x": 567,
+            "y": 504.1875
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 11,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "evidence_text_presented",
+        "timestampUtc": "2026-09-12T08:31:29.018Z",
+        "monotonicMs": 949.5999999940395,
+        "payload": {
+          "sources": [
+            {
+              "text": "项目当前采用状态\n\n当前已采用产品仍是 ANCHOR-WL-R0；C2 隔离候选尚未采用，没有后台迁移。可以保留 R0，或明确缺口后暂缓候选。",
+              "source": "authored://common-opportunities-v4.2/AW:ACTIVE-STATE · 对应版本：ANCHOR-WL-R0 · 模拟场景记录",
+              "exactRevision": "ANCHOR-WL-C2"
+            }
+          ],
+          "presentation": "requested_detail_body",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 12,
+        "scenarioId": "software-common-v42-compound-state",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_closed",
+        "timestampUtc": "2026-09-12T08:31:29.024Z",
+        "monotonicMs": 955.8999999985099,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AW:ACTIVE-STATE"
+        }
+      }
+    ],
+    "b3004a6d-03cb-41ce-922e-76e27f17da52": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 1,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:29.057Z",
+        "monotonicMs": 989.0999999940395,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:6992098b",
+          "assignmentSource": "researcher_preview",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 2,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "trigger_reveal_started",
+        "timestampUtc": "2026-09-12T08:31:29.176Z",
+        "monotonicMs": 1108.0999999940395,
+        "payload": {
+          "interactionStartMonotonicMs": 1108
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 3,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "pre_result_goal_acknowledged",
+        "timestampUtc": "2026-09-12T08:31:29.176Z",
+        "monotonicMs": 1108.1999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 1108,
+          "liveBaselineMessageCount": 0
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 4,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_revealed",
+        "timestampUtc": "2026-09-12T08:31:29.177Z",
+        "monotonicMs": 1108.2999999970198,
+        "payload": {
+          "revealOrdinal": 3,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:cdeca7c9",
+          "newlyVisibleNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:TASK",
+            "INFO:COMMON:LOCAL-PORTABILITY:TRIGGER",
+            "INFO:COMMON:LOCAL-PORTABILITY:INDEX"
+          ],
+          "availableProbeNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:ALL",
+            "EVIDENCE:AP:RECEIPT",
+            "EVIDENCE:AP:SCOPE-BOUNDARY",
+            "EVIDENCE:AP:CURRENT-STATE"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 5,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.177Z",
+        "monotonicMs": 1108.3999999985099,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:TASK",
+            "INFO:COMMON:LOCAL-PORTABILITY:TRIGGER",
+            "INFO:COMMON:LOCAL-PORTABILITY:INDEX"
+          ],
+          "frontierRef": "FRONTIER:v4.2-e0:e0:cdeca7c9",
+          "mode": "frozen_trigger_turn",
+          "responseText": "[[INFO:COMMON:LOCAL-PORTABILITY:TASK|本次团队任务]]\n在产品演进中保护资料身份、内容、组织关系与访问连续性，根据接下来的结果判断本轮可以认可或采用的范围。请把相关记录与其版本对应，区分已获支持和仍未核实的变化，明确采用、保留或暂缓的处置及安全保留状态。若暂缓，指出实际缺口如何影响下一动作，以及需要补充什么信息或检查。\n\n[[INFO:COMMON:LOCAL-PORTABILITY:TRIGGER|新到的项目结果]]\n新的导出文件与检查回执 export-803 已就绪，版本和范围记录可查询。请判断现在可以怎样描述这个备份。\n\n[[INFO:COMMON:LOCAL-PORTABILITY:INDEX|本机会材料索引]]\n导出回执记录；本次回执覆盖边界；当前格式与备份状态。可按问题查询，也可一次请求全部本机会材料。"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 6,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_stable_visible",
+        "timestampUtc": "2026-09-12T08:31:29.207Z",
+        "monotonicMs": 1138.3999999985099,
+        "payload": {
+          "informationSpaceVersion": "v4.2-e0",
+          "visibilityState": "visible",
+          "exposureMethod": "trigger_intersects_viewport_across_two_frames",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 7,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.303Z",
+        "monotonicMs": 1235,
+        "payload": {
+          "interactionStartMonotonicMs": 1235,
+          "rawText": "请一次给我全部本机会材料以及每份资料的版本与来源。",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:cdeca7c9",
+          "revealedNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:HISTORY",
+            "INFO:COMMON:LOCAL-PORTABILITY:TASK",
+            "INFO:COMMON:LOCAL-PORTABILITY:TRIGGER",
+            "INFO:COMMON:LOCAL-PORTABILITY:INDEX"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 8,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.305Z",
+        "monotonicMs": 1236.5,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:ALL",
+            "EVIDENCE:AP:RECEIPT",
+            "EVIDENCE:AP:SCOPE-BOUNDARY",
+            "EVIDENCE:AP:CURRENT-STATE"
+          ],
+          "requestedNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:ALL",
+            "EVIDENCE:AP:RECEIPT",
+            "EVIDENCE:AP:SCOPE-BOUNDARY",
+            "EVIDENCE:AP:CURRENT-STATE"
+          ],
+          "groundedNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:ALL",
+            "EVIDENCE:AP:RECEIPT",
+            "EVIDENCE:AP:SCOPE-BOUNDARY",
+            "EVIDENCE:AP:CURRENT-STATE"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "[[INFO:COMMON:LOCAL-PORTABILITY:ALL|全部本机会材料]]\n\n以下均为预先构造的模拟场景记录。\n\n[[EVIDENCE:AP:RECEIPT|导出回执记录]]\n\n回执 export-803 绑定当前 R3：导出后重新导入的 canonical ID、URL、Note、Tag 和 membership 集合保持一致。\n\n来源：authored://common-opportunities-v4.2/AP:RECEIPT · 对应版本：ANCHOR-PORT-R3 · 模拟场景记录\n\n[[EVIDENCE:AP:SCOPE-BOUNDARY|本次回执覆盖边界]]\n\n本回执是当前格式的导出/重新导入检查，不覆盖未来 schema 迁移、旧版本恢复或旧深链接路由。\n\n来源：authored://common-opportunities-v4.2/AP:SCOPE-BOUNDARY · 对应版本：ANCHOR-PORT-R3 · 模拟场景记录\n\n[[EVIDENCE:AP:CURRENT-STATE|当前格式与备份状态]]\n\n当前产品是 ANCHOR-PORT-R3。没有请求迁移或更换当前格式；该导出可以保留为已核对的当前格式备份。\n\n来源：authored://common-opportunities-v4.2/AP:CURRENT-STATE · 对应版本：ANCHOR-PORT-R3 · 模拟场景记录",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:cdeca7c9",
+          "traversedRelationIds": [
+            "EDGE:COMMON:LOCAL-PORTABILITY:INDEX-0",
+            "EDGE:COMMON:LOCAL-PORTABILITY:INDEX-1",
+            "EDGE:COMMON:LOCAL-PORTABILITY:INDEX-2",
+            "EDGE:COMMON:LOCAL-PORTABILITY:INDEX-3"
+          ],
+          "packetNodeIds": [
+            "INFO:COMMON:LOCAL-PORTABILITY:ALL",
+            "EVIDENCE:AP:RECEIPT",
+            "EVIDENCE:AP:SCOPE-BOUNDARY",
+            "EVIDENCE:AP:CURRENT-STATE",
+            "INFO:COMMON:LOCAL-PORTABILITY:TASK",
+            "INFO:COMMON:LOCAL-PORTABILITY:TRIGGER",
+            "INFO:COMMON:LOCAL-PORTABILITY:INDEX"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 9,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.314Z",
+        "monotonicMs": 1246,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AP:CURRENT-STATE",
+          "surface": "inline",
+          "interactionStartMonotonicMs": 1245.7999999970198,
+          "initialPosition": {
+            "x": 581,
+            "y": 504.09375
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 10,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_visible",
+        "timestampUtc": "2026-09-12T08:31:29.314Z",
+        "monotonicMs": 1246.1999999955297,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AP:CURRENT-STATE",
+          "nodeId": "EVIDENCE:AP:CURRENT-STATE",
+          "surface": "inline",
+          "initialPosition": {
+            "x": 581,
+            "y": 504.09375
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 11,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "evidence_text_presented",
+        "timestampUtc": "2026-09-12T08:31:29.315Z",
+        "monotonicMs": 1246.5,
+        "payload": {
+          "sources": [
+            {
+              "text": "当前格式与备份状态\n\n当前产品是 ANCHOR-PORT-R3。没有请求迁移或更换当前格式；该导出可以保留为已核对的当前格式备份。",
+              "source": "authored://common-opportunities-v4.2/AP:CURRENT-STATE · 对应版本：ANCHOR-PORT-R3 · 模拟场景记录",
+              "exactRevision": "ANCHOR-PORT-R3"
+            }
+          ],
+          "presentation": "requested_detail_body",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 12,
+        "scenarioId": "software-common-v42-local-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_closed",
+        "timestampUtc": "2026-09-12T08:31:29.321Z",
+        "monotonicMs": 1252.7999999970198,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AP:CURRENT-STATE"
+        }
+      }
+    ],
+    "f79004f6-8da1-494b-b54c-d8d270bac816": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 1,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:29.357Z",
+        "monotonicMs": 1289.0999999940395,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:78ddee49",
+          "assignmentSource": "researcher_preview",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 2,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "trigger_reveal_started",
+        "timestampUtc": "2026-09-12T08:31:29.470Z",
+        "monotonicMs": 1401.5,
+        "payload": {
+          "interactionStartMonotonicMs": 1401.3999999985099
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 3,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "pre_result_goal_acknowledged",
+        "timestampUtc": "2026-09-12T08:31:29.470Z",
+        "monotonicMs": 1401.7999999970198,
+        "payload": {
+          "interactionStartMonotonicMs": 1401.3999999985099,
+          "liveBaselineMessageCount": 0
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 4,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_revealed",
+        "timestampUtc": "2026-09-12T08:31:29.470Z",
+        "monotonicMs": 1402,
+        "payload": {
+          "revealOrdinal": 3,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:6967bc81",
+          "newlyVisibleNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:TASK",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TRIGGER",
+            "INFO:COMMON:COMPOUND-PORTABILITY:INDEX"
+          ],
+          "availableProbeNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:ALL",
+            "EVIDENCE:AM:CHANGE",
+            "EVIDENCE:AM:ROUNDTRIP",
+            "EVIDENCE:AM:FORWARD",
+            "EVIDENCE:AM:LEGACY",
+            "EVIDENCE:AM:RECOVERY",
+            "EVIDENCE:AM:ACTIVE-STATE"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 5,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.470Z",
+        "monotonicMs": 1402.1999999955297,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:TASK",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TRIGGER",
+            "INFO:COMMON:COMPOUND-PORTABILITY:INDEX"
+          ],
+          "frontierRef": "FRONTIER:v4.2-e0:e0:6967bc81",
+          "mode": "frozen_trigger_turn",
+          "responseText": "[[INFO:COMMON:COMPOUND-PORTABILITY:TASK|本次团队任务]]\n在产品演进中保护资料身份、内容、组织关系与访问连续性，根据接下来的结果判断本轮可以认可或采用的范围。请把相关记录与其版本对应，区分已获支持和仍未核实的变化，明确采用、保留或暂缓的处置及安全保留状态。若暂缓，指出实际缺口如何影响下一动作，以及需要补充什么信息或检查。\n\n[[INFO:COMMON:COMPOUND-PORTABILITY:TRIGGER|新到的项目结果]]\n迁移候选返回了一份新的导出结果，同时更新了迁移、恢复和路由检查索引。当前产品仍在原版本；团队需要决定本轮认可和采用的范围。\n\n[[INFO:COMMON:COMPOUND-PORTABILITY:INDEX|本机会材料索引]]\n候选存储与路由改动；候选导出往返回执；正向迁移记录；历史旧链接回执；恢复方案与检查索引；项目当前迁移状态。可按问题查询，也可一次请求全部本机会材料。"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 6,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_stable_visible",
+        "timestampUtc": "2026-09-12T08:31:29.490Z",
+        "monotonicMs": 1421.3999999985099,
+        "payload": {
+          "informationSpaceVersion": "v4.2-e0",
+          "visibilityState": "visible",
+          "exposureMethod": "trigger_intersects_viewport_across_two_frames",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 7,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.594Z",
+        "monotonicMs": 1526.1999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 1526.1999999955297,
+          "rawText": "请一次给我全部本机会材料以及每份资料的版本与来源。",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:6967bc81",
+          "revealedNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:HISTORY",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TASK",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TRIGGER",
+            "INFO:COMMON:COMPOUND-PORTABILITY:INDEX"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 8,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.596Z",
+        "monotonicMs": 1527.7999999970198,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:ALL",
+            "EVIDENCE:AM:CHANGE",
+            "EVIDENCE:AM:ROUNDTRIP",
+            "EVIDENCE:AM:FORWARD",
+            "EVIDENCE:AM:LEGACY",
+            "EVIDENCE:AM:RECOVERY",
+            "EVIDENCE:AM:ACTIVE-STATE"
+          ],
+          "requestedNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:ALL",
+            "EVIDENCE:AM:CHANGE",
+            "EVIDENCE:AM:ROUNDTRIP",
+            "EVIDENCE:AM:FORWARD",
+            "EVIDENCE:AM:LEGACY",
+            "EVIDENCE:AM:RECOVERY",
+            "EVIDENCE:AM:ACTIVE-STATE"
+          ],
+          "groundedNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:ALL",
+            "EVIDENCE:AM:CHANGE",
+            "EVIDENCE:AM:ROUNDTRIP",
+            "EVIDENCE:AM:FORWARD",
+            "EVIDENCE:AM:LEGACY",
+            "EVIDENCE:AM:RECOVERY",
+            "EVIDENCE:AM:ACTIVE-STATE"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "[[INFO:COMMON:COMPOUND-PORTABILITY:ALL|全部本机会材料]]\n\n以下均为预先构造的模拟场景记录。\n\n[[EVIDENCE:AM:CHANGE|候选存储与路由改动]]\n\nC4 候选改变 membership 存储格式和旧链接路由；任务是界定可认可的检查范围，并决定是否可以采用完整迁移。\n\n来源：authored://common-opportunities-v4.2/AM:CHANGE · 对应版本：ANCHOR-MIG-C4 · 模拟场景记录\n\n[[EVIDENCE:AM:ROUNDTRIP|候选导出往返回执]]\n\n当前 C4 的 export-904 检查了 C4 导出再导入 C4；ID、内容与多重归属均一致。它没有将数据恢复到 R2。\n\n来源：authored://common-opportunities-v4.2/AM:ROUNDTRIP · 对应版本：ANCHOR-MIG-C4 · 模拟场景记录\n\n[[EVIDENCE:AM:FORWARD|正向迁移记录]]\n\nR2→C4 正向迁移记录通过，两个独立条目 anchor-migration-item-411/412 的多重归属保留。正向成功不意味着逆向恢复成功。\n\n来源：authored://common-opportunities-v4.2/AM:FORWARD · 对应版本：ANCHOR-MIG-C4 · 模拟场景记录\n\n[[EVIDENCE:AM:LEGACY|历史旧链接回执]]\n\n旧链接回执只对应 R2 的旧路由。C4 修改了路由，当前没有 C4 的旧链接检查。\n\n来源：authored://common-opportunities-v4.2/AM:LEGACY · 对应版本：ANCHOR-MIG-R2 · 模拟场景记录\n\n[[EVIDENCE:AM:RECOVERY|恢复方案与检查索引]]\n\n恢复方案列出 C4→R2 的 membership 映射，但尚无执行结果。完整迁移采用前仍缺逆向恢复和当前旧链接两项检查。\n\n来源：authored://common-opportunities-v4.2/AM:RECOVERY · 对应版本：ANCHOR-MIG-C4 · 模拟场景记录\n\n[[EVIDENCE:AM:ACTIVE-STATE|项目当前迁移状态]]\n\n当前产品仍是 ANCHOR-MIG-R2，C4 只在隔离副本。可认可 C4→C4 导出检查而不采用完整迁移，也可保留 R2 或针对实际缺口暂缓。\n\n来源：authored://common-opportunities-v4.2/AM:ACTIVE-STATE · 对应版本：ANCHOR-MIG-R2 · 模拟场景记录",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:6967bc81",
+          "traversedRelationIds": [
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-0",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-1",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-2",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-3",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-4",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-5",
+            "EDGE:COMMON:COMPOUND-PORTABILITY:INDEX-6"
+          ],
+          "packetNodeIds": [
+            "INFO:COMMON:COMPOUND-PORTABILITY:ALL",
+            "EVIDENCE:AM:CHANGE",
+            "EVIDENCE:AM:ROUNDTRIP",
+            "EVIDENCE:AM:FORWARD",
+            "EVIDENCE:AM:LEGACY",
+            "EVIDENCE:AM:RECOVERY",
+            "EVIDENCE:AM:ACTIVE-STATE",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TASK",
+            "INFO:COMMON:COMPOUND-PORTABILITY:TRIGGER",
+            "INFO:COMMON:COMPOUND-PORTABILITY:INDEX"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 9,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.606Z",
+        "monotonicMs": 1537.2999999970198,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AM:ACTIVE-STATE",
+          "surface": "inline",
+          "interactionStartMonotonicMs": 1537.2999999970198,
+          "initialPosition": {
+            "x": 567,
+            "y": 503.734375
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 10,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_visible",
+        "timestampUtc": "2026-09-12T08:31:29.606Z",
+        "monotonicMs": 1537.6999999955297,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AM:ACTIVE-STATE",
+          "nodeId": "EVIDENCE:AM:ACTIVE-STATE",
+          "surface": "inline",
+          "initialPosition": {
+            "x": 567,
+            "y": 503.734375
+          }
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 11,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "evidence_text_presented",
+        "timestampUtc": "2026-09-12T08:31:29.606Z",
+        "monotonicMs": 1538.0999999940395,
+        "payload": {
+          "sources": [
+            {
+              "text": "项目当前迁移状态\n\n当前产品仍是 ANCHOR-MIG-R2，C4 只在隔离副本。可认可 C4→C4 导出检查而不采用完整迁移，也可保留 R2 或针对实际缺口暂缓。",
+              "source": "authored://common-opportunities-v4.2/AM:ACTIVE-STATE · 对应版本：ANCHOR-MIG-R2 · 模拟场景记录",
+              "exactRevision": "ANCHOR-MIG-C4"
+            }
+          ],
+          "presentation": "requested_detail_body",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 12,
+        "scenarioId": "software-common-v42-compound-portability",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "object_detail_closed",
+        "timestampUtc": "2026-09-12T08:31:29.615Z",
+        "monotonicMs": 1547,
+        "payload": {
+          "objectRef": "OBJECT:EVIDENCE:AM:ACTIVE-STATE"
+        }
+      }
+    ],
+    "ccad0c90-65e5-45ca-8d6c-3719a368fecb": [
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 1,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "session_started",
+        "timestampUtc": "2026-09-12T08:31:29.657Z",
+        "monotonicMs": 1589.1999999955297,
+        "payload": {
+          "preview": true,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:bcf04133",
+          "assignmentSource": "researcher_preview",
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver",
+          "agentProvider": "local",
+          "agentConfigurationStatus": "ready",
+          "previewAgentOverride": "local",
+          "formalDataCollection": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 2,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.780Z",
+        "monotonicMs": 1711.3999999985099,
+        "payload": {
+          "interactionStartMonotonicMs": 1711.1999999955297,
+          "rawText": "工程走查：这个产品到底要守住什么？",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:430b1273",
+          "revealedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:SAVE-RULES-R0",
+            "INFO:ORTHOGONAL-STATES-R0",
+            "INFO:SEARCH-IDENTITY-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 3,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.782Z",
+        "monotonicMs": 1714.0999999940395,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ],
+          "requestedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0"
+          ],
+          "groundedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "当前场景规定 R0 可保存与找回资料，且没有已确定的下一项改版。产品目标是快速保存并[[INFO:PRODUCT-GOAL-R0|可靠找回]]；下面保留目标、约束和场景基线。",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "history",
+          "frontierRef": "FRONTIER:v4.2-e0:history:430b1273",
+          "traversedRelationIds": [
+            "EDGE:GOAL:GUARDS"
+          ],
+          "packetNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0",
+            "INFO:SAVE-RULES-R0",
+            "INFO:ORTHOGONAL-STATES-R0",
+            "INFO:SEARCH-IDENTITY-R0"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 4,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "baseline_takeover_exchange_completed",
+        "timestampUtc": "2026-09-12T08:31:29.783Z",
+        "monotonicMs": 1714.5,
+        "payload": {
+          "participantText": "工程走查：这个产品到底要守住什么？",
+          "responseNodeIds": [
+            "INFO:PRODUCT-GOAL-R0"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 5,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "trigger_reveal_started",
+        "timestampUtc": "2026-09-12T08:31:29.794Z",
+        "monotonicMs": 1726.2999999970198,
+        "payload": {
+          "interactionStartMonotonicMs": 1726
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 6,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "baseline",
+        "event": "baseline_observation_authorized",
+        "timestampUtc": "2026-09-12T08:31:29.795Z",
+        "monotonicMs": 1727,
+        "payload": {
+          "interactionStartMonotonicMs": 1726,
+          "liveBaselineMessageCount": 2
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 7,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_revealed",
+        "timestampUtc": "2026-09-12T08:31:29.795Z",
+        "monotonicMs": 1727.2999999970198,
+        "payload": {
+          "revealOrdinal": 9,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:64caf47f",
+          "newlyVisibleNodeIds": [
+            "PILOT:R0-D4-01",
+            "EVIDENCE:REFIND-PATHS-R0-01",
+            "EVIDENCE:COLLECTION-TIMING-R0-01",
+            "EVIDENCE:COLLECTION-RETURN-R0-01",
+            "BOUNDARY:PILOT-R0-D4-01"
+          ],
+          "availableProbeNodeIds": [
+            "CORPUS:E0-TASKS-ALL",
+            "CORPUS:E0-ITEMS-ALL",
+            "EVIDENCE:E0-CONTEXT-NOTES",
+            "EVIDENCE:E0-PENDING",
+            "COHORT:R0-PENDING-MEMBER",
+            "CORPUS:E0-DELAYED-TASKS",
+            "CORPUS:E0-DUAL-TASKS",
+            "CORPUS:E0-NONDUAL-TASKS",
+            "TRACE:E0-ORDINARY-SEARCH",
+            "TRACE:E0-ORDINARY-COLLECTION",
+            "CORPUS:E0-EVENTS-ALL",
+            "CORPUS:E0-ORGANIZATION-TASKS",
+            "TRACE:R0-REFIND-017"
+          ]
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 8,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.796Z",
+        "monotonicMs": 1727.6999999955297,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "PILOT:R0-D4-01",
+            "EVIDENCE:REFIND-PATHS-R0-01",
+            "EVIDENCE:COLLECTION-TIMING-R0-01",
+            "EVIDENCE:COLLECTION-RETURN-R0-01",
+            "BOUNDARY:PILOT-R0-D4-01"
+          ],
+          "frontierRef": "FRONTIER:v4.2-e0:e0:64caf47f",
+          "mode": "frozen_trigger_turn",
+          "responseText": "四日观察包已可查看。这是为本次产品决策任务新构造的模拟使用记录，不是恢复的历史原始数据。\n\n[[PILOT:R0-D4-01|12 个使用画像完成了 144 次保存和 72 次计划内找回]]，均成功。[[EVIDENCE:REFIND-PATHS-R0-01|48 次延迟找回中，有 21 次在打开目标前经过 Inbox 和 Unsorted]]；[[EVIDENCE:COLLECTION-TIMING-R0-01|到第四日，57 个条目已有 Collection 归属]]。另有 8 段情境说明，分别涉及稍后处理、状态核对、入口选择和主题回访。\n\n这些记录绑定 R0-reading-list-e0-v4.2。访问路径没有逐次对应的动机说明，不能仅凭经过两个入口判断使用者迷路。当前没有新候选，也没有修改产品。"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 9,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "product_session_created",
+        "timestampUtc": "2026-09-12T08:31:29.817Z",
+        "monotonicMs": 1748.2999999970198,
+        "payload": {
+          "productSessionId": "02B09550-2EDF-498B-8C28-2540C67AD41A",
+          "productSessionVersion": 0,
+          "currentRevisionId": "R0",
+          "storageClass": "process_memory_engineering_preview",
+          "publicFacts": [
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:CURRENT:R0",
+              "kind": "current_revision",
+              "title": "当前产品 R0",
+              "body": "R0（基线），6 条实现沙盒数据。这是当前实际产品状态。\n待处理 4 条；未归入集合 2 条。\n尚无绑定当前内容的检查回执。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-042",
+              "kind": "product_item",
+              "title": "R0 / R0-042",
+              "body": "R0-042：Offline-first sync notes\nURL：https://example.test/offline\n备注：Shared local state\n标签：[\"sync\",\"offline\"]\n集合归属：[\"Project Atlas\"]\n待处理：是。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-043",
+              "kind": "product_item",
+              "title": "R0 / R0-043",
+              "body": "R0-043：Cache invalidation patterns\nURL：https://example.test/cache\n备注：Read before the next design review\n标签：[\"cache\"]\n集合归属：[\"Project Atlas\",\"Weekend Reading\"]\n待处理：是。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-044",
+              "kind": "product_item",
+              "title": "R0 / R0-044",
+              "body": "R0-044：Keyboard focus checklist\nURL：https://example.test/focus\n备注：Keep focus after actions\n标签：[\"accessibility\"]\n集合归属：[]\n待处理：是。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-045",
+              "kind": "product_item",
+              "title": "R0 / R0-045",
+              "body": "R0-045：Import provenance notes\nURL：https://example.test/import\n备注：Keep source metadata\n标签：[\"migration\"]\n集合归属：[\"Archive\"]\n待处理：否。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-046",
+              "kind": "product_item",
+              "title": "R0 / R0-046",
+              "body": "R0-046：Garden reading\nURL：https://example.test/garden\n备注：A finished ungrouped item\n标签：[\"leisure\"]\n集合归属：[]\n待处理：否。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:REVISION:R0:ITEM:R0-047",
+              "kind": "product_item",
+              "title": "R0 / R0-047",
+              "body": "R0-047：Query semantics\nURL：https://example.test/query\n备注：Search across all saved items\n标签：[\"retrieval\"]\n集合归属：[\"Weekend Reading\"]\n待处理：是。",
+              "revisionId": "R0",
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            },
+            {
+              "id": "PRODUCT:30324230393535302D324544462D343938422D384332382D323534304336374144343141:STATE:0:EVIDENCE-BOUNDARY",
+              "kind": "evidence_boundary",
+              "title": "实现及检查的证据边界",
+              "body": "本会话操作 6 条固定作者构造数据，独立于 144 条观察材料及其候选评价。检查回执来自本内核实际执行，不将模拟评价当作运行结果。尚未验证浏览器键盘路径、屏幕阅读器、移动端可用性、人的沟通效率或全部 144 条材料的产品执行。本层只接受明确操作和参与者确认；准备操作本身不会产生检查通过结论。",
+              "revisionId": null,
+              "evidenceClass": "authored_implementation_sandbox",
+              "source": "executable_product_session",
+              "asOfProductStateVersion": 0,
+              "isCurrentSnapshot": true
+            }
+          ],
+          "formalStudyReady": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 10,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "trigger_stable_visible",
+        "timestampUtc": "2026-09-12T08:31:29.823Z",
+        "monotonicMs": 1755.2999999970198,
+        "payload": {
+          "informationSpaceVersion": "v4.2-e0",
+          "visibilityState": "visible",
+          "exposureMethod": "trigger_intersects_viewport_across_two_frames",
+          "entireTextRead": false,
+          "humanAttentionObserved": false
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 11,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "chat_action_started",
+        "timestampUtc": "2026-09-12T08:31:29.935Z",
+        "monotonicMs": 1866.6999999955297,
+        "payload": {
+          "interactionStartMonotonicMs": 1866.5,
+          "rawText": "给我普通 Search 直接找回案例。",
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:64caf47f",
+          "revealedNodeIds": [
+            "INFO:PRODUCT-GOAL-R0",
+            "INFO:SAVE-RULES-R0",
+            "INFO:ORTHOGONAL-STATES-R0",
+            "INFO:SEARCH-IDENTITY-R0",
+            "INFO:PROTECTED-GUARDS-R0",
+            "VERIFY:BASELINE-R0",
+            "PILOT:R0-D4-01",
+            "EVIDENCE:REFIND-PATHS-R0-01",
+            "EVIDENCE:COLLECTION-TIMING-R0-01",
+            "EVIDENCE:COLLECTION-RETURN-R0-01",
+            "BOUNDARY:PILOT-R0-D4-01"
+          ],
+          "agentMode": "deterministic_local_lookup",
+          "agentModel": "local frozen resolver"
+        }
+      },
+      {
+        "schemaVersion": "software-development-browser-preview-v1",
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 12,
+        "scenarioId": "software-product-development-v1",
+        "condition": "B",
+        "phase": "trigger",
+        "event": "agent_response_recorded",
+        "timestampUtc": "2026-09-12T08:31:29.940Z",
+        "monotonicMs": 1871.8999999985099,
+        "payload": {
+          "matched": true,
+          "nodeIds": [
+            "TRACE:E0-ORDINARY-SEARCH"
+          ],
+          "requestedNodeIds": [
+            "TRACE:E0-ORDINARY-SEARCH"
+          ],
+          "groundedNodeIds": [
+            "TRACE:E0-ORDINARY-SEARCH"
+          ],
+          "mode": "deterministic_local_lookup",
+          "responseText": "[[TRACE:E0-ORDINARY-SEARCH|普通 Search 直接找回案例]]\n\n选择规则：在延迟任务中，按任务 ID 排序，取第一个仅含 Search 和打开目标两步的任务。该规则在 A/B 相同。\n\nv4.2 作者新构造的模拟情境；非历史恢复数据、非真实参与者或软件执行证据。\n\n协议 PROTOCOL:E0-v4.2-authoring，版本 R0-reading-list-e0-v4.2，隔离账号 REPLICA:E0:012。\n\n| 任务 | 画像 | 目标 | 开始状态 | 完整访问过程（模拟时钟） | 事件来源 |\n| --- | --- | --- | --- | --- | --- |\n| R0-REFIND-024 | PROFILE:012 | R0-024 | pending=true; membership=[COLLECTION:012:ATLAS] | 0秒 Search Export format notes 024 → 4秒 打开 R0-024 | RAW:R0-REFIND-024:1, RAW:R0-REFIND-024:2 |\n\n条目标题：Export format notes 024。最终事件打开目标 identity；没有任务级动机说明。\n\nRAW:R0-REFIND-024:1 · search · t=261600000 场景毫秒 · PROFILE:012 / REPLICA:E0:012 / SESSION:PROFILE:012:D4:R0-REFIND-024 · Search; query=\"Export format notes 024\" · 来源 AUTHORING:E0-v4.2-deterministic-allocation\n\nRAW:R0-REFIND-024:2 · open_item · t=261604000 场景毫秒 · PROFILE:012 / REPLICA:E0:012 / SESSION:PROFILE:012:D4:R0-REFIND-024 · Search; R0-024 · 来源 AUTHORING:E0-v4.2-deterministic-allocation",
+          "model": "local frozen resolver",
+          "provider": "local-deterministic-lookup",
+          "deliveryKind": "deterministic_lookup",
+          "configuredAgentMode": "deterministic_local_lookup",
+          "providerInvoked": false,
+          "providerPolicy": null,
+          "requestId": null,
+          "latencyMs": null,
+          "usage": null,
+          "evidenceEnvelopeHash": null,
+          "informationSpaceVersion": "v4.2-e0",
+          "frontierStage": "e0",
+          "frontierRef": "FRONTIER:v4.2-e0:e0:64caf47f",
+          "traversedRelationIds": [
+            "EDGE:E0-v4.2:EVIDENCE:REFIND-PATHS-R0-01:TRACE:E0-ORDINARY-SEARCH"
+          ],
+          "packetNodeIds": [
+            "TRACE:E0-ORDINARY-SEARCH",
+            "PILOT:R0-D4-01",
+            "EVIDENCE:REFIND-PATHS-R0-01",
+            "EVIDENCE:COLLECTION-TIMING-R0-01",
+            "EVIDENCE:COLLECTION-RETURN-R0-01",
+            "BOUNDARY:PILOT-R0-D4-01"
+          ]
+        }
+      }
+    ]
+  },
+  "dispositions": [
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB1",
+      "scenarioId": "software-common-v42-local-state",
+      "period": 0,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-STATE-R7",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查初稿 1：先保留当前产品，继续核对版本与影响范围。",
+      "explicitSubmissionAtMonotonicMs": 668,
+      "exposure": {
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 6,
+        "monotonicMs": 405.09999999403954
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": false
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB2",
+      "scenarioId": "software-common-v42-local-state",
+      "period": 0,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-STATE-R7",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查修订 1：我暂不扩大采用范围。当前依据为“最近事件只为同一条目添加 Delivery membership，没有清除 Inbox，没有产生副本。”。此处记录判断，等待独立核对。",
+      "explicitSubmissionAtMonotonicMs": 692.8999999985099,
+      "exposure": {
+        "sessionId": "61b150c5-f78b-4e12-a851-451fa33cf72b",
+        "sequence": 6,
+        "monotonicMs": 405.09999999403954
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": true
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB3",
+      "scenarioId": "software-common-v42-compound-state",
+      "period": 1,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-WL-C2",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查初稿 2：先保留当前产品，继续核对版本与影响范围。",
+      "explicitSubmissionAtMonotonicMs": 967.6999999955297,
+      "exposure": {
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 6,
+        "monotonicMs": 838.7999999970198
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": false
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB4",
+      "scenarioId": "software-common-v42-compound-state",
+      "period": 1,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-WL-C2",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查修订 2：我暂不扩大采用范围。当前依据为“当前已采用产品仍是 ANCHOR-WL-R0；C2 隔离候选尚未采用，没有后台迁移。可以保留 R0，或明确缺口后暂缓候选。”。此处记录判断，等待独立核对。",
+      "explicitSubmissionAtMonotonicMs": 982.5999999940395,
+      "exposure": {
+        "sessionId": "eb91e079-97dc-47ff-88aa-8f6bddeb3b7f",
+        "sequence": 6,
+        "monotonicMs": 838.7999999970198
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": true
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB5",
+      "scenarioId": "software-common-v42-local-portability",
+      "period": 2,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-PORT-R3",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查初稿 3：先保留当前产品，继续核对版本与影响范围。",
+      "explicitSubmissionAtMonotonicMs": 1264.5999999940395,
+      "exposure": {
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 6,
+        "monotonicMs": 1138.3999999985099
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": false
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB6",
+      "scenarioId": "software-common-v42-local-portability",
+      "period": 2,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-PORT-R3",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查修订 3：我暂不扩大采用范围。当前依据为“当前产品是 ANCHOR-PORT-R3。没有请求迁移或更换当前格式；该导出可以保留为已核对的当前格式备份。”。此处记录判断，等待独立核对。",
+      "explicitSubmissionAtMonotonicMs": 1278.5,
+      "exposure": {
+        "sessionId": "b3004a6d-03cb-41ce-922e-76e27f17da52",
+        "sequence": 6,
+        "monotonicMs": 1138.3999999985099
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": true
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB7",
+      "scenarioId": "software-common-v42-compound-portability",
+      "period": 3,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-MIG-C4",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查初稿 4：先保留当前产品，继续核对版本与影响范围。",
+      "explicitSubmissionAtMonotonicMs": 1560.0999999940395,
+      "exposure": {
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 6,
+        "monotonicMs": 1421.3999999985099
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": false
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB8",
+      "scenarioId": "software-common-v42-compound-portability",
+      "period": 3,
+      "condition": "B",
+      "subjectRevision": "ANCHOR-MIG-C4",
+      "productSessionId": null,
+      "productSessionVersion": null,
+      "currentProductRevisionId": null,
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查修订 4：我暂不扩大采用范围。当前依据为“当前产品仍是 ANCHOR-MIG-R2，C4 只在隔离副本。可认可 C4→C4 导出检查而不采用完整迁移，也可保留 R2 或针对实际缺口暂缓。”。此处记录判断，等待独立核对。",
+      "explicitSubmissionAtMonotonicMs": 1573.8999999985099,
+      "exposure": {
+        "sessionId": "f79004f6-8da1-494b-b54c-d8d270bac816",
+        "sequence": 6,
+        "monotonicMs": 1421.3999999985099
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": true
+    },
+    {
+      "submissionId": "8c14830b-365c-4c7e-89fa-678cb34aafb0:SUB9",
+      "scenarioId": "software-product-development-v1",
+      "period": 4,
+      "condition": "B",
+      "subjectRevision": "R0-reading-list-e0-v4.2",
+      "productSessionId": "02B09550-2EDF-498B-8C28-2540C67AD41A",
+      "productSessionVersion": 0,
+      "currentProductRevisionId": "R0",
+      "candidateProductRevisionId": null,
+      "informationSpaceVersion": "v4.2-e0",
+      "participantOriginalText": "工程走查：我保留 R0；这个普通找回案例不支持直接改导航。后续需要分别核对具体范围、版本和未验证路径。",
+      "explicitSubmissionAtMonotonicMs": 1898.2999999970198,
+      "exposure": {
+        "sessionId": "ccad0c90-65e5-45ca-8d6c-3719a368fecb",
+        "sequence": 10,
+        "monotonicMs": 1755.2999999970198
+      },
+      "dispositionValidity": "manual_review_pending",
+      "timeToVerifiedGold": null,
+      "humanQuality": null,
+      "submissionIsNotVerifiedCompletion": true,
+      "participantFinalizedOpportunity": true
+    }
+  ],
+  "missing": [
+    "independent baseline semantic review",
+    "independent disposition coding",
+    "blinded quality scores",
+    "formal consent and immutable collection"
+  ]
+}

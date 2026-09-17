@@ -1,6 +1,59 @@
-# 软件产品开发实验整体剧本信息架构 v4
+# 软件产品开发实验整体剧本信息架构：v4.2 支持面与历史 authoring library
 
-状态：`architecture_reopened_for_output_contingent_v4_experience_contract_added_content_packets_not_frozen_runtime_not_aligned`
+修订日期：2026-09-12。现行研究合同见 [v4.2 研究协议](software-product-development-v1-research-protocol-v4.2.md)。本文件保留信息架构与宽候选 authoring library；§9–§13 的 Focus、Context、组合与长期包是后续设计，不能当作本版已支持结果。历史 pilot 快照不变。
+
+## v4.1 研究合同与实施优先级
+
+本节保留已接受的设计原则；共同任务顺序、首批支持面、计分依赖与有效处置统一按 v4.2 协议执行。本文件不是已经执行的实验或预注册记录。
+
+**软件开发领域的待检验主张：** 中间结果使新的调查或修改需求变得相关时，在相同 Full Chat、信息、Agent 和操作语义上增加可选对象入口，是否降低抵达有依据、可验证下一状态的交互成本，同时保持决策质量与产品正确性。允许零效应、反向效应、更多有价值的探索和 B 全程不使用对象。对象识别、内部思考速度和产品功能本身的收益不属于本次主要 claim。
+
+### 接管与 Agent 政策
+
+H01–H07 的完整共同历史保留，并明确是场景既有历史，不是当前参与者的真实过往。H08 通过自然问答核对：URL-only 保存；canonical item 与 membership；Inbox/Unsorted 的正交关系；当前 revision、候选尚未采用及验证范围。参与者不必复述 ID 或一次答全。错误只作必要的同条件纠正，已证明的理解不重复考试；记录实际问答及 predicate 依据。H09 需要明确观察授权。一次成功模型回复不能替代这些 predicates；未通过时不发布计时 Trigger。额外训练、退出和耗时单独记录，不能按条件事后删掉慢参与者。
+
+Agent 完整回答当前问题，允许一次查询多个事实、全部案例、跨版本比较和自然语言综合；同一语义请求不因 A/B 改变内容范围。被要求时可以提出建议并说明依据，但不得主动替参与者选择下一调查、补写动机或扩张实施范围。不得通过降低 A 的语言理解、限制一问一字段、强制重述对象全名或额外等待制造 B 优势。自发表达的理由、经 Agent 提议后确认的理由和纯 Agent 文字分开记录；对象选择本身不属于理由。没有询问下一步时，回答可在事实与必要证据边界处结束，不强行追加路线菜单。
+
+“相同文本”指共同历史、共同 Trigger 和语义等价请求的规范事实投影；不同问题自然得到不同回答，不能要求两个自由轨迹逐字一致。内容、模型、工具和错误策略一致；本地对象访问的真实延迟与模型等待分别记录，不能把等待差全部归因于指代优势。隔离主要效应是整个可选对象层，单独的选择、摘要、布局或延迟效应需要另设对照。
+
+### 开放经历与共同任务机会
+
+开放主任务保留 E0→O1→O2→O3 的有限评价机会，但不要求走满、做候选或改变方向。每次结果应带来可检查的新事实、状态或证据边界；不要以“继续”作为主要交互。Agent 请求中的机器命令数量与一次语义迁移分开。
+
+| 机会 | 具体修订 | 合法可验证结果 | 分析用途 |
+| --- | --- | --- | --- |
+| COMMON-LOCAL-STATE | Trigger 报告新收到的“已归类后从 Unsorted 消失”问题，但不直接给出条目当时 membership/Inbox 字段；两条件都可查 as-of state 与既有语义 | 正确判断视图变化是否符合当前关系，不合并处理状态；若必要字段设计为缺失，精确指出该字段 | 共同 local；避免把答案直接写在 Trigger 内 |
+| COMMON-COMPOUND-WL | Trigger 给路径改善与异常数量；逐案范围、affected revision、旧回执适用范围可按问题取得 | 有依据地保留、修改、撤回或暂缓，同时处理 scope、状态表达及 currentness | 共同 compound；不要求多做点击 |
+| COMMON-LOCAL-PORTABILITY | Trigger 给出新导出完成消息和 receipt 索引，scope/subject 在按需材料中 | 正确绑定一个 receipt 的 revision 与声明范围 | 共同 local；不再只复制已给出的答案 |
+| COMMON-COMPOUND-PORTABILITY | 导出成功但候选同时改变 membership/route；需核对各相关回执与变更依赖 | 仅认可 current 范围，对缺失检查提出明确验证请求或合理暂缓 | 共同 compound；同一 GoldSet 不奖励某种产品偏好 |
+| DIRECTED 两项 | 在输出之前明确给出要找的定义或回执 | 返回指定事实、版本和来源 | 独立定向对照，不归入 output-contingent |
+| E0 与 O1–O3 开放经历 | 参与者自由查询、选择候选和分配评价机会 | 记录真实工作量、转向、非采用、未完成与多个合法终态 | 开放轨迹的 assignment-level 结果与探索性机制；不按点击或所选路线筛选主要样本 |
+
+以上修改是候选语义规格，旧 trigger digest 和 Gold verifier 不能直接复用。共同问题与评分要求必须在 A/B 同时可见，不能用隐藏判据惩罚合理但未被要求的省略。暂缓不是通用捷径：应指出该机会实际存在的缺口/冲突及其对下一状态的影响；完整材料下的空泛“证据不足”不自动通过。local/compound 的任务数、样本量和模型须经最终 SAP 确定；当前两个主题不能证明一般复杂度定律，模板效应必须保留。
+
+共同 anchors 在隔离副本中先行，不改变随后开放项目。开放模块使用不同条目与材料，并承认前模块的结构学习；共同任务内部做位置平衡，不声称完全消除携带效应。Directed 是独立边界研究候选。共同理解核对在分配/揭示条件前进行。同一参与者的多个机会不是独立参与者。A/B 主比较保留所有随机分配者，包括 B 不使用对象者；技术失败、withdrawal、early stop、defer 和完成分别报告。不能只比较成功者耗时后宣称总体效率提升。
+
+### 时间、语义与质量
+
+每个机会记录 `tTriggerStableVisible`、`tFirstTargetedAction`、`tFirstRelevantEvidenceVisible`、`tParticipantCommit`、`tFirstVerifiedGold`、`tExplicitDisposition`。最后两者分开：v4 的首次 verified Gold 作为 `timeToVerifiedGold`；本次软件稿拟以显式接受当前 verified Gold 的 trigger-to-acceptance 时间作为 `OCFT_acceptance`。SAP 与 main.pdf 对齐前两者均为候选字段，不静默重命名。合法 defer 记录自己的 disposition time，不伪造成接受产品；未完成无 completed OCFT。
+
+wall time 保留完整；另记录 system waiting、可验证 pause 及其区间并集，避免重叠双扣。active time = wall time − 被预先声明排除的等待/暂停并集；缺失同一单调时钟或区间端点时为 unavailable。第一信息可见不等于整个证据包充分，更不等于理解；E2 需绑定该机会的充分信息集合。分段允许重访与返工，首次里程碑只描述事件，不当作互斥认知阶段。IAR 只在 first-reveal 单位与去重规则冻结后报告为信息可用速率，不叫理解速率。
+
+| 质量维度 | 0：不足 | 1：部分成立 | 2：充分成立 |
+| --- | --- | --- | --- |
+| 证据支持 | 无依据或错版本 | 相关但遗漏决定性边界 | 引用实际可用且版本适用的证据，区分事实与推断 |
+| 范围适当 | 请求/接受超出证据或擅改 guard | 范围大致一致但有歧义 | 接受、排除、保持和待做范围清楚 |
+| 取舍校准 | 宣称无代价或普遍最优 | 承认部分代价 | 收益、成本与未测范围对应 |
+| 内部一致 | 理由与最终状态矛盾 | 可解释但残留冲突 | 理由、实际 revision、disposition 一致 |
+| 可追溯性 | 无法回溯决定 | 有来源但缺版本/作用范围 | 证据、变更、验证与 reopen 条件可回溯 |
+
+这是新编的候选盲评 rubric，不冒充已验证量表；逐维报告，不把质量和速度加总。两名独立评分者看相同格式的决定包，隐藏条件、对象使用、耗时与界面截图；保留参与者原文和 Agent 协助标记，不能由 Agent 润色后替代原文。形成性检查评分一致性，锁定分歧处理后再收集。技术 oracle 单独检查 identity、payload、protected behavior、freshness 与待执行工作；通过 oracle 不代表设计方向最佳。质量保持需事先合理界定容许差异，不能凭不显著推断等价。
+
+### 本轮完成与后续边界
+
+v4.2 按设计/材料闭合→可运行经历→论文与形成性包分阶段实施并集中检查。新 E0 ledger 是作者构造记录，不能称恢复了旧原始数据。工程接线先形成可实际体验的候选，再做真实形成性与 SAP 冻结。所有场景数值仍是刺激，不能写成研究参与者结果。NTE 是可选独立预试描述，不是共同任务入组或计分依赖。
+
+状态：`architecture_reopened_bounded_e0_v4_participant_baseline_restored_semantic_gate_and_full_packets_not_frozen`
 
 适用场景：`software-product-development-v1`
 
@@ -10,11 +63,11 @@
 
 ## 1. 本文冻结什么
 
-本文是实验体验的信息架构上游事实源。v4 冻结的目标是产品世界、共同建构的项目前史、共享信息图、语义迁移语法、exact-state 结果包、跨阶段关系和合法终态谓词，而不是四条参与者路线。完整 raw corpus、pair-state packet 与 runtime participant copy 仍明确未冻结，不能把本稿误称为 participant package 或 runtime。
+本文是实验体验的信息架构上游事实源。v4 冻结的目标是产品世界、共同建构的项目前史、共享信息图、语义迁移语法、exact-state 结果包、跨阶段关系和合法终态谓词，而不是四条参与者路线。当前 `v4-pilot.1` 已把 H01–H07 完整共同历史、H08 现场接管、H09 观察授权和 E0 aggregate-to-source 切片接入浏览器运行时；完整 raw corpus、pair-state packet 与后续 runtime participant copy 仍明确未冻结，不能把本稿或该切片误称为 participant package 或完整 v4 runtime。
 
-本文不重新设计论文中的 Claim、RQ 或统计模型，也不加入跨域任务。当前样本只负责把软件产品开发领域做深、做厚、做成真正的 `state -> evidence -> judgment -> state` 信息空间。
+本文只处理软件产品开发领域。v4.1 将 main.pdf 的机制主张转成待检验的剧本与测量候选，不沿用旧稿效应值，也不宣称已冻结统计模型。当前样本负责把 `state -> evidence -> judgment -> state` 做成可检查的信息空间。
 
-当前运行时中的六段历史、一次 Trigger、一个固定候选和一次结果只能视为早期工程 witness，不是本架构的边界。v2 中已经写出的 Hub、Focus、Context 与 R0 数值继续作为可重索引的 authoring packet library；其旧 family 路线、same-family parent 限制和两窗口终局不是 v4 的规范性拓扑。运行时只有覆盖本文后，才可称为 v4 场景实现。
+当前浏览器运行时已用动态 Frontier 代替 Agent 请求中的固定 ordinal，并实例化 18 个 L0–L8 节点与 20 条类型化关系；它证明完整共同历史和 E0 可以在同一 Chat 中按问题逐步下钻到 concrete trace、as-of state、raw event 与 receipt。当前 H08 仍以一次成功的现场 Agent 往返作为工程解锁条件，尚未实现正式 runtime 所需的 condition-neutral baseline semantic predicate。v2 中已经写出的 Hub、Focus、Context 与 R0 数值继续作为可重索引的 authoring packet library；未来候选、长期证据、跨 epoch output、commit/verify 与终态尚未进入运行时，因此当前仍只能称为有界 v4 机制 pilot。
 
 ## 2. 参与者应当经历什么
 
@@ -106,7 +159,7 @@ ParticipantMotiveLine = <
 
 只有参与者在语言中明确表达的理由，或他明确提出的 task-relevant semantic request，才进入上述 ledger。选择对象、停留、滚动或点击只能证明一次交互发生，不能被解释成“更在意”“已经理解”或任何潜在认知状态。Agent 可以复述“你刚才说 X 是因为 Y”，但不能用“你显然更关心……”替参与者生成动机。
 
-代表性样本必须让参与者在相当比例的 scored turns 中真正选择当前可辩护的 Probe、reframe、request-evidence、Commit 或 revisit 边；authoring audit 以 40%–60% 为目标范围。它只是防止剧本退化成连续的“继续/运行下一步”，不是参与者纳入标准、实验自变量或新的统计 estimand。实现、测试、确认范围等 directed turns 可以存在，不要求每个 Chat turn 都分岔。
+代表性样本应包含由新证据引出的实际判断机会，避免连续“继续/运行下一步”。不规定 choice-bearing turn 比例，不为达到比例添加无必要岔路。实现、测试和范围确认可以自然是 directed turns；实际节奏由形成性观察评估。
 
 ### 2.4 Agent 输出要深厚，但采用渐进揭示
 
@@ -416,7 +469,7 @@ gateway 必须从当前 state 与 receipts 重新计算完整 `PacketEligibility
 
 ### 8.1 顶层共同 Trigger
 
-所有参与者先获得同一条复合但有损的最新输出：四日试用、context notes、支持事件和工程/可访问性回执已经冻结；144/144 次 URL-only capture 与 72/72 次计划内找回完成，48 次延迟找回中有 21 次同时经过 Inbox 和 Unsorted，第四日 57/144 个条目具有 Collection 归属，8 段情境说明包含彼此竞争的解释；没有候选被比较，现有材料不能指定产品方向。该输出只发布 aggregate、它更新的旧状态与 boundary；concrete trace、完整 membership timeline、raw event 和 receipt 仍需沿相应对象 Probe 后才出现。
+所有参与者先获得 participant-consumed-script v4.1 的同一 E0 原文，明确模拟来源、144 次保存、72 次找回、21/48 双入口、D4 membership 57 和8段情境说明；不发布候选或建议。原文是 canonical copy，以下为对象索引与按需内容。raw corpus 尚未完整冻结；原文在正式运行前仍须通过内容库存的放行检查。复合 Probe 可一次取得多个层级，不要求固定下钻顺序。
 
 顶层只自然出现以下索引对象：
 
@@ -1212,117 +1265,17 @@ B 全程不用对象仍是有效 B trial。对象只有在参与者真实选择�
 
 未来对象不能先注册再用 CSS 隐藏；在逻辑上必须不可寻址。B 只能锚定已经由共同 Chat 自然发布的对象。每次 reveal 都必须通过第 6.4 节的 atomic publication gateway；Machine 不能读取 hidden bundle 后自行重述。
 
-## 18. 预注册的 episode opportunities
+## 18. v4.2 共同机会合同
 
-`EndpointSet` 是整场产品 disposition；它不能代替局部 output-contingent episode 的 acceptable GoldSet。预注册静态定义与 trial 后观测必须分开：
+现行来源：[研究协议 §4–§6](software-product-development-v1-research-protocol-v4.2.md) 与 `scenarios/materials/common-opportunities-v4.2.mjs`。旧版此节直接揭示答案的 Trigger、以不知动机作为 local Gold、将 E0 自选路线计为共同任务、把独立 NTE 当计分硬依赖的表已撤销。它们不能被运行时或分析器继续读取。
 
-```text
-OpportunitySpec = <
-  specVersion,
-  opportunityId,
-  templateId,
-  matchedTaskSetRef,
-  goalRef,
-  canonicalSubjectStateDigest,
-  canonicalFrontierDigest,
-  eligibleEpochClass,
-  triggerClass: state_contingent_output | predeclared_directed_request,
-  qualifyingTriggerRef,
-  episodeClass,
-  complexityClass,
-  counterbalanceScheduleRef,
-  sandboxResetClass,
-  preStudyNteRef,
-  analysisContractId,
-  requiredSemanticEdgeBundle,
-  acceptableGoldPredicates[],
-  executableVerifierRef,
-  protectedPredicates,
-  clockSource,
-  fixedWaitingExclusionPolicy,
-  pausePolicy,
-  deferAndNoncompletionOutcomeClass
->
+四机会为 `OP:COMMON-LOCAL-STATE`、`OP:COMMON-COMPOUND-WL`、`OP:COMMON-LOCAL-PORTABILITY`、`OP:COMMON-COMPOUND-PORTABILITY`。每项具有公开任务、中立 Trigger、隔离 replica、按需事实、exact revision、允许处置和技术 Gold。相同请求允许一次取全当前范围，Gold 不检查路线。结构化技术判定不等于自然语言理解或人工质量。
 
-OpportunityObservation = <
-  opportunitySpecDigest,
-  trialRef,
-  counterbalanceSequenceRef,
-  periodOrdinal,
-  sandboxResetReceipt,
-  exposureReceipt,
-  actualSubjectRevisionRef,
-  actualFrontierDigest,
-  epochRef,
-  triggerVisibilityReceipt,
-  tTriggerStableVisible,
-  tFirstVerifiedGold,
-  targetDuration,
-  informationDuration,
-  actionDuration,
-  verifyDuration,
-  activeDuration,
-  wallDuration,
-  fixedWaitingDuration,
-  pauseDuration,
-  repairAndBacktrackEvents,
-  matchedGoldPredicateRef?,
-  outcomeStatus,
-  observationReceipt
->
+共同机会先于开放模块，四条候选序列为 `L_STATE→C_STATE→L_PORT→C_PORT`、`C_STATE→L_STATE→C_PORT→L_PORT`、`L_PORT→C_PORT→L_STATE→C_STATE`、`C_PORT→L_PORT→C_STATE→L_STATE`，只声明位置平衡，不声明完全平衡一阶携带效应。真实分配与 sequence 冻结尚待实施/形成性。每个机会需记录 spec/revision、period、重置与稳定可见来源，错配记录为技术不合格；不能通过删除它们后只比较成功者来宣称分配效果。
 
-OpportunitySpec_A(opportunity) = OpportunitySpec_B(opportunity)
-SessionEndpointSet_A = SessionEndpointSet_B
-```
+主要候选 estimand 是所有随机分配者的有效处置率与受限制未解决时间，质量另报。技术 Gold 与参与者显式处置分开；合法暂缓必须说明实际相关缺口。NTE 可缺失，不影响技术 Gold。截止时间、样本量、正式分析与缺失策略仍须冻结。Directed 另列，不进入四共同任务主要集合。
 
-一条 observation 只有在以下条件全部成立时才可进入相应分析集合：`opportunitySpecDigest` 精确命中冻结 Spec；actual subject/frontier/epoch/trigger visibility 与 Spec 一致；counterbalance sequence、period 与 sandbox reset receipt 有效；exposure receipt 证明该 trigger 在对应 A/B 中以相同 participant-safe 内容稳定可见；canonical pre-study snapshot digest 匹配；Gold verifier 与 Endpoint/Noncompletion classifier 使用 Spec 中的版本。任一 digest、period、reset、snapshot 或 exposure 不匹配都 fail closed，不得用邻近 opportunity 补齐。该 conformance contract 仍需在 runtime 中实现；目前只完成架构定义。
-
-当前场景的开放连续经历、独立 common anchors 与 directed controls 至少定义以下 canonical contracts。后两者在隔离 period 中发生，不是开放剧本的隐藏必经路线。`preStudyNteRef` 与 `analysisContractId` 在独立预试和论文/SAP 显式绑定前保持 pending；pending contract 可以用于内容审阅，不能冒充已冻结 scored episode：
-
-| Opportunity | Qualifying Trigger | 预注册语义负担 | `acceptableGoldPredicates[]`（首次 verified 命中任一即结束） | 当前分析地位 |
-| --- | --- | --- | --- | --- |
-| `OP:COMMON-LOCAL-STATE` | shared isolated output 首次揭示同一 item 已有 membership 且仍为 Inbox pending | `MATCHSET:STATE-ORTHOGONAL` 的 local template；单一 SavedItem、单一正交状态关系，不要求 product mutation 或 dependency propagation | `GOLD:LOCAL-DISAMBIGUATED`：正确保留 membership 与 pending 两字段及 canonical identity；或 `GOLD:LOCAL-QUALIFIED-UNKNOWN`：明确指出当前 output 不足以推断动机 | `episodeClass=output_contingent`、`complexityClass=local`；所有 randomized participants eligible；candidate confirmatory anchor，NTE/analysis binding pending |
-| `OP:COMMON-COMPOUND-WL` | shared isolated W_L output 首次同时揭示 route benefit、state-legibility exception、scope exception 与 Search-first boundary | `MATCHSET:STATE-ORTHOGONAL` 的 compound template；多个 evidence objects、两类 exception、candidate freshness、Surface/Organization/Navigation/Accessibility protected predicates 的共同判断 | `GOLD:COMPOUND-REVISE-EXACT`、`GOLD:COMPOUND-DISCARD-AND-REQUEST`、`GOLD:COMPOUND-KEEP-FOR-PROTOCOL`、`GOLD:COMPOUND-SAFE-DEFER` | `episodeClass=output_contingent`、`complexityClass=compound`；所有 randomized participants eligible；candidate confirmatory anchor，NTE/analysis binding pending |
-| `OP:COMMON-LOCAL-PORTABILITY` | shared isolated output 首次显示 `VERIFY:R0` 的 import/export receipt 与其 exact R0 revision/scope | `MATCHSET:PORTABILITY-CURRENTNESS` 的 local template；一个 receipt、一条 `verifies` relation 与一个 subject revision | `GOLD:LOCAL-RECEIPT-CURRENT`：把 receipt、R0 与声明范围正确绑定；或 `GOLD:LOCAL-RECEIPT-QUALIFIED-UNKNOWN`：指出 output 缺少的 currentness/scope 条件 | `episodeClass=output_contingent`、`complexityClass=local`；所有 randomized participants eligible；candidate confirmatory anchor，NTE/analysis binding pending |
-| `OP:COMMON-COMPOUND-PORTABILITY` | shared isolated optional-context candidate output 同时显示 export round-trip、canonical identity、multi-membership、source provenance、legacy route 与 candidate-specific freshness | `MATCHSET:PORTABILITY-CURRENTNESS` 的 compound template；协调多个 receipts、revision-scoped freshness、Identity/Organization/Navigation/Device-Data dependencies 与 protected predicates | `GOLD:COMPOUND-PORTABILITY-QUALIFIED`：正确绑定 candidate revision、current/stale receipts 与全部 protected dependencies；或 `GOLD:COMPOUND-PORTABILITY-SAFE-DEFER`：缺少任一 required receipt 时不外推 | `episodeClass=output_contingent`、`complexityClass=compound`；所有 randomized participants eligible；candidate confirmatory anchor，NTE/analysis binding pending |
-| `OP:DIRECTED-STATE-DEFINITION` | Machine 输出前，predeclared task request 已稳定显示“找到当前 R0 中 Inbox 与 Unsorted 的精确定义及二者关系” | directed retrieval；target/request、允许来源和成功谓词在输出前固定，不依赖任何 state-contingent output | `GOLD:DIRECTED-STATE-FOUND`：定位 current R0 定义并正确返回正交关系与 receipt；或预注册的 unavailable/noncompletion outcome | `episodeClass=directed`、`complexityClass=directed_control`；所有 randomized participants eligible；NTE/analysis binding pending；不进入 Local/Compound sample |
-| `OP:DIRECTED-PORTABILITY-RECEIPT` | Machine 输出前，predeclared task request 已稳定显示“定位 current import/export 回执及其 exact revision” | directed retrieval；一个预先指定 target 与 verification relation，request 在输出前已知 | `GOLD:DIRECTED-PORTABILITY-FOUND`：返回 current receipt、subject revision 与 scope；或预注册的 unavailable/noncompletion outcome | `episodeClass=directed`、`complexityClass=directed_control`；所有 randomized participants eligible；NTE/analysis binding pending；不进入 Local/Compound sample |
-| `OP:E0-DUAL-VISIT` | E0 显示 21/48 双入口访问且动机未知 | 对 aggregate、情境边界、具体 trace、item as-of state 与历史正交语义进行至少一次有根据的连接 | `GOLD:E0-CANDIDATE-COMMIT`：grounded intent 唯一命中 supported exact state；或 `GOLD:E0-SCOPED-REQUEST`：request 能区分当前竞争解释；两者均要求 protected semantics current | 所有人可经历的 common compound anchor；NTE/analysis binding pending |
-| `OP:O1-WL-EXCEPTIONS` | `W_L` output 同时显示路径收益、state-legibility exception、scope exception 与 Search-first boundary | 比较至少两个互不等价的结果边，并处理 candidate-specific freshness | `GOLD:O1-REVISE-EXACT`、`GOLD:O1-DISCARD-AND-REQUEST`、`GOLD:O1-KEEP-FOR-PROTOCOL`、`GOLD:O1-SAFE-DEFER` | 只有实际进入 `W_L` 的 participant eligible；secondary/exploratory |
-| `OP:O2-R0-REFRAME` | scoped R0 output 显示 checking/reconstruction 混合、57→71 membership 与多次有来源重组 | 把长期 evidence 与先前 candidate residual unknown、R0 history 和 protected modules 联结 | `GOLD:O2-NEW-EXACT-CANDIDATE`、`GOLD:O2-RETAIN-R0`、`GOLD:O2-NEXT-REQUEST`、`GOLD:O2-SAFE-DEFER` | actual request 后 eligible；secondary/exploratory，NTE pending |
-| `OP:O3-V-BOUNDARY` | exact `V` output 显示有限 target-set benefit、uptake split、maintenance changes 与 a11y closure | 联合判断 benefit、subgroup、maintenance、guard 与 rejected deltas | `GOLD:O3-PROMOTE-ACCEPT-V`：participant 授权 promote、current pointer 移到 V 且恢复验证 current；`GOLD:O3-REJECT-RETAIN-R0`；`GOLD:O3-SAFE-DEFER` | isolated V evaluation 后 eligible；secondary/exploratory，NTE pending；V 未 adopted 前不允许伪 rollback |
-
-表中的 GoldState 是语义谓词而非点击路径。正式 manifest 必须进一步枚举 required information/action/verification edges、protected fields 与 verifier；不能仅用自然语言标签结束计时。`COMMON-*` 与 E0 也必须等 executable specs、NTE/analysis binding 完成后才能进入 confirmatory mechanism；O1-O3 self-selected state-specific contracts 不能因看起来内容丰富就升级为 confirmatory sample。
-
-“完全相同”只适用于同一 `OpportunitySpec` 在 A/B 两种界面条件下的语义内容、Machine 行为、trigger、Gold predicates、verifier、时限和 schedule。Local 与 Compound 不是同一 opportunity：它们共享软件产品领域、高层目标、matched-task topic、session bound、sandbox reset class 和 A/B parity 规则，但按预注册 semantic burden 使用不同 trigger、information universe、Gold predicates 与 verifier；不能用 A/B parity 等式把复杂度差异抹掉。
-
-每位 randomized participant 都完成四个独立 sandbox anchors，且它们不改变开放主剧本的 `trialCurrentRevision`。与 A/B assignment 独立的四个平衡 sequence 为：`L_STATE→C_STATE→L_PORT→C_PORT`、`C_STATE→L_STATE→C_PORT→L_PORT`、`L_PORT→C_PORT→L_STATE→C_STATE`、`C_PORT→L_PORT→C_STATE→L_STATE`。每个 period 前安装其 sealed replica，并产生 `sandboxResetReceipt`；稳定 trigger 可见后产生 `exposureReceipt`。四个 sequence 在 A/B 内等额分配，period、reset 与 exposure 不合格者按预注册 noncompletion 处理，不能换一个模板顶替。只有四个 common anchors 的 executable specs、独立 NTE、既有 analysis bindings、reset/exposure receipts 与 counterbalance conformance 全部完成后，本场景才可进入既有 Local/Compound confirmatory comparison。
-
-OCFT 从 `OpportunityObservation.triggerVisibilityReceipt` 证明 qualifying trigger 在 monotonic clock 上稳定可见开始，到 executable verifier 首次证明任一 acceptable GoldPredicate 且 protected predicates current 为止。固定 Machine waiting 按 spec 的 exclusion policy 单独记录/排除；participant pause 只按预注册 pause policy 处理，不能在看过 condition 后任意裁剪。Compound 由 spec 中预注册的多对象、关系、依赖和 protected predicates 的协调负担定义，不能用实际点击、turn、epoch 数或事后所选 packet cluster 定义。
-
-以下是信息机会，不是必须依次完成的操作清单：
-
-| ID | Semantic edge | 类型 |
-| --- | --- | --- |
-| `EDGE:E0-OBS` | Trigger summary -> 某一 aggregate observation | Local reveal |
-| `EDGE:OBS-TRACE` | aggregate -> cohort -> concrete trace | Vertical compound |
-| `EDGE:TRACE-STATE` | trace -> SavedItem as-of state | Vertical provenance |
-| `EDGE:STATE-REL` | item state -> membership/route relation | Local relation |
-| `EDGE:SUR-ORG` | route observation <-> membership timeline | Horizontal compound |
-| `EDGE:EVIDENCE-BOUNDARY` | observation -> 未测量内容/限制 | Evidence qualification |
-| `EDGE:UNKNOWN-HYPOTHESIS` | unknown -> competing explanation | Exploratory framing |
-| `EDGE:INTENT-CANDIDATE` | participant intent -> implemented semantic delta | State transition |
-| `EDGE:CANDIDATE-GUARD` | candidate -> affected constraints and verification | Compound dependency |
-| `EDGE:E1-EXCEPTION` | aggregate result -> subgroup/exception trace | Horizontal/vertical |
-| `EDGE:E1-REOPEN` | new result -> historical decision or reopened module | Temporal compound |
-| `EDGE:CROSS-COMPOSE` | output + two primitive deltas -> exact pair state | Cross-module compound / fan-in |
-| `EDGE:REBASE` | discard/rollback -> verified R0 + retained EpistemicState -> new candidate | Multi-epoch cross-edge |
-| `EDGE:REVISIT` | new output -> old evidence/revision -> reinterpret current unknown | Non-DAG temporal loop |
-| `EDGE:C1-C2` | prior state + new output -> revision/merge/rollback | Multi-epoch transition |
-| `EDGE:E2-CURRENTNESS` | E2 -> current/stale evidence and integration guard | Verification compound |
-| `EDGE:FRONTIER-TERMINAL` | current frontier -> condition-neutral disposition | Decision transition |
-
-两个 directed 对照是独立的 `OP:DIRECTED-STATE-DEFINITION` 与 `OP:DIRECTED-PORTABILITY-RECEIPT`，其 target/request 必须在任何 Machine 输出前由同一 condition-neutral task card 明确。它们使用各自的 OpportunityObservation、Gold verifier 与计时，不复用 `COMMON-LOCAL-*` observation，也不进入 Local/Compound complexity sample；仅有低 NTE 还不够，predeclared target/request、A/B parity 和独立 analysis binding 也必须成立。两者按 `D_STATE→D_PORT` / `D_PORT→D_STATE` counterbalance，与四个 common anchors 和开放主剧本分开计时，不改变产品状态，也不是第二领域。
+图边是理论/实现表示，不等于点击、轮数或人的认知阶段。首次信息可见不等于证据充分；检索 bundle 不等于披露；已披露不等于已理解。
 
 ## 19. 与 Claim/RQ 和理论扩展的映射
 
@@ -1339,7 +1292,7 @@ OCFT 从 `OpportunityObservation.triggerVisibilityReceipt` 证明 qualifying tri
 | context reconstruction/repair | 回访历史、错误 referent、backtrack、stale-reference 和 clarification |
 | state-delta precision | participant intent、实际 module delta 和 protected state 的一致性 |
 | objective quality | condition-blind hard validity + 独立盲评的 evidence coverage、trade-off calibration、scope、coherence 与 traceability |
-| directed boundary | 同一产品图中 request/target 在 Machine 输出前已知的 `DIRECTED-STATE-DEFINITION / DIRECTED-PORTABILITY-RECEIPT`；各自 observation 与 Local/Compound sample 分离，低 NTE 仅是必要条件之一 |
+| directed boundary | 同一产品图中 request/target 在 Machine 输出前已知的 `DIRECTED-STATE-DEFINITION / DIRECTED-PORTABILITY-RECEIPT`；各自 observation 与 Local/Compound sample 分离，NTE 可选且不决定该边界任务资格 |
 
 该单一样本可以贡献软件开发领域内的 Claim、RQ1/RQ2 和质量保持证据；它不能独立证明跨域泛化。
 
@@ -1398,6 +1351,15 @@ OCFT 从 `OpportunityObservation.triggerVisibilityReceipt` 证明 qualifying tri
 - 静态对象目录冒充信息空间；
 - card open 或 selection 冒充 semantic transition；
 - native/Codex lifecycle 进入产品剧本本体。
+
+### 当前 `v4-pilot.1` 运行切片
+
+- 在 Chat lane 中完整呈现 H01–H07 的既有 User–Agent 开发历史，不再用 S01 摘要替代这些历史；
+- S01 只作为 H08 的 canonical context 留在场景内核，不向当前参与者伪装成已经完成的接管；当前参与者须现场发送消息并收到 Agent 回答后，H09 观察授权才出现；
+- 运行时按 `history` / `e0` stage、已揭示节点、最近语义上下文和类型化关系计算 derived Frontier；
+- E0 可从 aggregate 下钻到 cohort、`TRACE:R0-REFIND-017`、`ITEM:R0-042@D4T17`、membership relation、raw events 与 `RECEIPT:R0-PILOT-INTEGRITY`；
+- A/B 共用同一 Frontier 和局部信息包，只有 B 把回答中的受许可自然短语渲染为可选对象；
+- 未来 candidate、long-horizon packet、commit、verify、reopen 与 terminal refs 仍不可寻址。该切片用于机制走查，不是内容冻结或正式实验版本。
 
 ## 22. 已实例化的代表性信息链
 
@@ -1560,4 +1522,4 @@ v4 共享图、共同前史与三段 attention-driven 连续对话 witness 已�
 - 在不接触正式 assignment outcome 的 formative 样本中检查 exact-cell coverage/OOM rate，并只以预注册版本升级扩展 response surface；
 - participant-visible allowlist 与 hidden-material negative scan。
 
-在上述内容完成前，不进入 GUI 或 Codex 原生复刻。
+在相应内容与测量合同完成前，不将后续 GUI 或 Codex 原生实现称为正式实验。v4.1 本次只更新四份现行内容文档，现有工程 preview 的已完成工作继续保留。

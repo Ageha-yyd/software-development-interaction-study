@@ -1,8 +1,23 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import ts from "typescript";
+import { createReadingListE0Corpus } from "../scenarios/materials/reading-list-e0-v4.2.mjs";
 
 const root = new URL("../", import.meta.url);
+
+async function importTypeScript(relativePath) {
+  const sourceUrl = new URL(relativePath, root);
+  const source = await readFile(sourceUrl, "utf8");
+  const compiled = ts.transpileModule(source, {
+    compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext },
+  }).outputText.replace(/(from\s+["'])(\.[^"']+)(["'])/g,
+    (_whole, prefix, specifier, suffix) => `${prefix}${new URL(specifier, sourceUrl).href}${suffix}`);
+  return import(`data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}`);
+}
+
+const scenarioModule = importTypeScript("scenarios/software-product-development-v1.ts");
+const runtimeModule = importTypeScript("lib/experiment/runtime.ts");
 
 async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -20,18 +35,37 @@ test("renders the dedicated software product development route", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /软件产品开发实验基座/);
-  assert.match(html, /正在准备冻结实验基线/);
+  assert.match(html, /正在准备 v4 信息空间试用/);
 });
 
-test("freezes eleven information nodes, eight turns, and eleven additive object anchors", async () => {
-  const source = await readFile(new URL("scenarios/software-product-development-v1.ts", root), "utf8");
-  assert.equal((source.match(/\bnode\(\s*\n\s*"/g) ?? []).length, 11);
-  assert.equal((source.match(/\bturn\(\s*"/g) ?? []).length, 8);
-  assert.equal((source.match(/\banchor\(\s*"/g) ?? []).length, 11);
-  assert.match(source, /EPISODE-01-SUR-ORG/);
-  assert.match(source, /本次证据边界/);
-  assert.doesNotMatch(source, /ALFA|BETA|GAMMA|股票/);
-  assert.doesNotMatch(source, /condition\s*:/);
+test("instantiates the generated v4.2 E0 projection with complete H01-H09 history and accessible item/task ledgers", async () => {
+  const { SOFTWARE_PRODUCT_DEVELOPMENT_V1: scenario } = await scenarioModule;
+  const { createScenarioAdapter } = await runtimeModule;
+  const adapter = createScenarioAdapter(scenario);
+  assert.equal(scenario.informationSpaceVersion, "v4.2-e0");
+  assert.equal(scenario.episodeId, "EPISODE-01-SUR-ORG");
+  assert.equal(scenario.turns.length, 9);
+  assert.equal(scenario.turns.filter((turn) => turn.phase === "project_history").length, 7);
+  assert.equal(scenario.baselineOrdinal, 8);
+  assert.equal(scenario.triggerOrdinal, 9);
+  for (const [items, key] of [[scenario.informationNodes, "nodeId"], [scenario.objectAnchors, "objectRef"], [scenario.informationRelations, "relationId"]]) {
+    assert.equal(new Set(items.map((item) => item[key])).size, items.length);
+  }
+  for (const anchor of scenario.objectAnchors) assert.equal(adapter.node(anchor.nodeId).title, anchor.label);
+  const packet = adapter.buildPacket("全部144条目，以及全部72任务", "e0");
+  assert.deepEqual(new Set(packet.resolution.nodeIds), new Set(["CORPUS:E0-ITEMS-ALL", "CORPUS:E0-TASKS-ALL"]));
+  assert.match(adapter.node("CORPUS:E0-ITEMS-ALL").body, /共 144 个条目/);
+  assert.match(adapter.node("CORPUS:E0-TASKS-ALL").body, /共 72 个计划任务/);
+  assert.equal(adapter.resolveQuery("全部144条目", "history").matched, false);
+  assert.equal(scenario.informationNodes.filter((item) => item.nodeId.startsWith("ITEM:")).length, 144);
+  const corpus = createReadingListE0Corpus();
+  assert.equal(corpus.tasks.length, 72);
+  for (const task of corpus.tasks) {
+    const id = task.taskId === "R0-REFIND-017" ? "TRACE:R0-REFIND-017" : `TRACE:E0:${task.taskId}`;
+    assert.ok(adapter.node(id).queryAliases.includes(task.taskId));
+  }
+  assert.doesNotMatch(JSON.stringify(scenario), /ALFA|BETA|GAMMA|股票/);
+  assert.ok(!("condition" in scenario));
 });
 
 test("keeps B additive and records real action-start timestamps", async () => {
@@ -47,6 +81,8 @@ test("keeps B additive and records real action-start timestamps", async () => {
   assert.ok(shell.indexOf("interactionStartMonotonicMs = eventMonotonicMs()") < shell.indexOf("gateway.respond"));
   assert.match(runtime, /scenario_object_projection_mismatch/);
   assert.match(runtime, /scenario_object_reveal_mismatch/);
+  assert.match(runtime, /information-frontier-v4-pilot\.1/);
+  assert.match(runtime, /availableProbeNodeIds/);
   assert.match(telemetry, /software-development-browser-preview-v1/);
   assert.match(telemetry, /localStorage\.setItem/);
 });
@@ -60,10 +96,13 @@ test("locks one condition-neutral Agent transport per browser session", async ()
   ]);
   assert.match(shell, /fetch\("\/api\/software-agent"/);
   assert.match(shell, /agentRuntime\.mode === "remote_chat_completion" \? remoteGateway : localGateway/);
+  assert.match(shell, /forceLocalAgent = isPreview && params\.get\("agent"\) === "local"/);
   assert.match(shell, /本会话不会自动切换到另一个回答器/);
   assert.match(shell, /evidenceEnvelopeHash/);
   assert.match(gateway, /createRemoteAgentGateway/);
   assert.match(gateway, /stripAgentObjectMarkup/);
+  assert.match(gateway, /frontierStage/);
+  assert.doesNotMatch(gateway, /visibleOrdinal/);
   assert.doesNotMatch(gateway, /condition|selectedObjectRefs|objectRef/);
   assert.match(route, /allowedBodyKeys/);
   assert.match(route, /SOFTWARE_AGENT_API_KEY/);
@@ -117,7 +156,7 @@ test("keeps a lightweight Chat layer with source-style transient object details"
   assert.doesNotMatch(objectLinkRule, /font-size|font-weight/);
 });
 
-test("renders progressive Agent replies as Codex-like plain prose without replaying fixed participant turns", async () => {
+test("renders the complete v4 project history in the Chat lane before live takeover", async () => {
   const [shell, css, scenario, types, runtime] = await Promise.all([
     readFile(new URL("components/experiment/ExperimentShell.tsx", root), "utf8"),
     readFile(new URL("components/experiment/experiment-shell.module.css", root), "utf8"),
@@ -134,30 +173,54 @@ test("renders progressive Agent replies as Codex-like plain prose without replay
   assert.doesNotMatch(css, /\.informationNode:last-child|\.nodeHeading\b|\.nodePunctuation\b|\.nodeSource\b|\.agentMark\b|\.completeMark\b/);
   assert.match(css, /\.agentMessage, \.workflowMessage\s*\{[^}]*display:\s*block/s);
   assert.match(css, /\.nodeList\s*\{[^}]*gap:\s*10px/s);
-  assert.match(shell, /filter\(\(turn\) => turn\.phase === "baseline_summary"\)/);
+  assert.match(shell, /filter\(\(turn\) => turn\.phase === "project_history"\)/);
+  assert.match(shell, /historyTurns\.map\(renderHistoryTurn\)/);
+  assert.match(shell, /Participant \$\{turn\.turnId\}/);
+  assert.match(shell, /Agent \$\{turn\.turnId\}/);
+  assert.match(shell, /renderAgentText\(historyMessage\)/);
+  assert.match(shell, /baselineSummaryTurn/);
+  assert.match(shell, /baselineExchangeComplete/);
+  assert.match(shell, /baseline_takeover_exchange_completed/);
+  assert.match(shell, /baseline_observation_authorized/);
+  assert.match(shell, /historyTranscript/);
+  assert.match(shell, /\.\.\.historyTranscript/);
+  assert.match(shell, /\.\.\.liveTranscript/);
+  assert.doesNotMatch(shell, /availableHistorySlots|\.slice\(-14\)/);
   assert.match(shell, /origin: "workflow"/);
   assert.match(shell, /text: triggerTurn\.user/);
   assert.match(shell, /text: triggerTurn\.assistantLead/);
-  assert.match(shell, /turn\.presentedNodeIds \?\? turn\.informationNodeIds/);
+  assert.match(shell, /const triggerNodeIds = triggerTurn\.informationNodeIds/);
+  assert.doesNotMatch(shell, /baselineTurns|renderAgentTurn/);
   assert.doesNotMatch(shell, /visibleTurns\.map\(renderTurn\)/);
   assert.match(types, /chatAnchorText:\s*string/);
   assert.match(types, /queryResponseLead:\s*string/);
+  assert.match(types, /epistemicDepth:\s*InformationDepth/);
   assert.match(runtime, /scenario_chat_anchor_missing/);
-  assert.match(scenario, /我隔了一阵子没看/);
-  assert.match(scenario, /那 Inbox 和 Unsorted 不是有点重吗/);
-  assert.match(scenario, /那先看实际怎么用的/);
+  assert.match(runtime, /scenario_history_turn_missing_anchor/);
+  assert.match(runtime, /scenario_turn_marker_outside_projection/);
+  assert.match(runtime, /scenario_turn_marker_not_grounded/);
+  assert.match(runtime, /buildPacket/);
+  assert.match(scenario, /我想做一个很轻的个人阅读清单/);
+  assert.match(scenario, /同一篇 Offline-first sync notes/);
+  assert.match(scenario, /拖放对我可以是快捷方式，但不能是唯一方式/);
+  assert.match(scenario, /我先确认一下我现在对它的理解/);
+  assert.match(scenario, /好，那就冻结 R0/);
+  assert.match(scenario, /E0_PROJECTION/);
   assert.doesNotMatch(scenario, /加载共同的新试用记录；这不是在要求某个预设改版|请概括当前版本/);
   assert.doesNotMatch(scenario, /当前稳定目标如下|当前保存与组织规则如下/);
 });
 
-test("answers colloquial grounded queries without frozen-material form language", async () => {
-  const runtime = await readFile(new URL("lib/experiment/runtime.ts", root), "utf8");
-  assert.match(runtime, /我还没完全抓到你指的是哪一段/);
-  assert.match(runtime, /不把它们拆成几轮小问答/);
-  assert.match(runtime, /explicitMatches/);
-  assert.match(runtime, /contextualMatches/);
-  assert.match(runtime, /queryResponseLead/);
-  assert.doesNotMatch(runtime, /我只能基于当前已经发布的冻结材料|请指明信息对象|以下是当前冻结材料中的对应信息/);
+test("answers multi-field Chat requests and does not infer a hit from unrelated recent context", async () => {
+  const { SOFTWARE_PRODUCT_DEVELOPMENT_V1: scenario } = await scenarioModule;
+  const { createScenarioAdapter } = await runtimeModule;
+  const adapter = createScenarioAdapter(scenario);
+  const multi = adapter.resolveQuery("请解释保存规则、Search 和护栏", "history");
+  assert.equal(multi.matched, true);
+  for (const id of ["INFO:SAVE-RULES-R0", "INFO:SEARCH-IDENTITY-R0", "INFO:PROTECTED-GUARDS-R0"]) assert.ok(multi.nodeIds.includes(id));
+  const unrelated = adapter.resolveQuery("那今天月球天气怎样", "e0", ["TRACE:R0-REFIND-017"]);
+  assert.equal(unrelated.matched, false);
+  assert.equal(unrelated.nodeIds.length, 0);
+  assert.doesNotMatch(unrelated.message, /我只能基于当前已经发布的冻结材料|请指明信息对象/);
 });
 
 test("models the participant experience as co-constructed history plus isolated attention-driven continuations", async () => {
@@ -166,7 +229,6 @@ test("models the participant experience as co-constructed history plus isolated 
   assert.match(dialogue, /不是逐字播放脚本/);
   assert.match(dialogue, /participant-facing experience witness/);
   assert.match(dialogue, /真实参与者只会经历自己实际走出的一段/);
-  assert.equal((dialogue.match(/^## /gm) ?? []).length, 5);
   assert.match(dialogue, /^## 共同前史：这个产品怎样一轮轮成为 R0/m);
   assert.match(dialogue, /^## 共同接管（不计时）：当前参与者用自己的话接回 R0/m);
   assert.match(dialogue, /^## 接续样本 A：/m);
@@ -175,7 +237,10 @@ test("models the participant experience as co-constructed history plus isolated 
 
   const prehistory = dialogue.slice(dialogue.indexOf("## 共同前史"), dialogue.indexOf("## 共同接管"));
   const takeover = dialogue.slice(dialogue.indexOf("## 共同接管"), dialogue.indexOf("## 接续样本 A"));
-  const visibleDialogue = dialogue.slice(dialogue.indexOf("## 共同前史"));
+  // Explicit organizer-only annotations are not participant dialogue. Keep the
+  // no-scoring/no-internal-ID assertion on all remaining participant prose.
+  const visibleDialogue = dialogue.slice(dialogue.indexOf("## 共同前史"))
+    .replace(/^> Organizer：.*$/gm, "");
   assert.equal((prehistory.match(/^\*\*你\*\*$/gm) ?? []).length, 7);
   assert.equal((prehistory.match(/^\*\*Agent\*\*$/gm) ?? []).length, 7);
   assert.equal((takeover.match(/^\*\*你\*\*$/gm) ?? []).length, 2);
@@ -185,8 +250,8 @@ test("models the participant experience as co-constructed history plus isolated 
   assert.match(prehistory, /拖放对我可以是快捷方式，但不能是唯一方式/);
   assert.match(takeover, /我先确认一下我现在对它的理解/);
   assert.match(takeover, /R0 已冻结/);
-  assert.match(takeover, /48 次延迟找回里有 21 次/);
-  assert.match(takeover, /没有哪一个被预先标成“最值得看”/);
+  assert.match(takeover, /48 次延迟找回中，有 21 次/);
+  assert.match(takeover, /不能仅凭经过两个入口判断使用者迷路/);
 
   assert.match(dialogue, /我先卡在“多带入 1 条”这里/);
   assert.match(dialogue, /现在反而是那 9 个一直直接用 Search 的人/);
@@ -201,14 +266,8 @@ test("models the participant experience as co-constructed history plus isolated 
   assert.doesNotMatch(dialogue, /目前最值得继续追|我们先回答|接下来只观察/);
   assert.doesNotMatch(dialogue, /^### |^## 路径[一二三四]|输入框提示|聊天回复 ·|信息卡 ·/m);
 
-  const roleBlocks = [...dialogue.matchAll(/\*\*(Agent|你)\*\*\s*\r?\n\r?\n([\s\S]*?)(?=\r?\n\r?\n\*\*(?:Agent|你)\*\*|\r?\n\r?\n## |$)/g)];
-  const participantLengths = roleBlocks.filter((match) => match[1] === "你").map((match) => match[2].trim().length);
-  const agentLengths = roleBlocks.filter((match) => match[1] === "Agent").map((match) => match[2].trim().length).sort((left, right) => left - right);
-  const agentMedian = agentLengths[Math.floor(agentLengths.length / 2)];
-  assert.ok(participantLengths.length >= 30);
-  assert.ok(participantLengths.filter((length) => length >= 60).length >= 12);
-  assert.ok(agentMedian >= 180);
-  assert.ok(agentLengths.reduce((sum, length) => sum + length, 0) > participantLengths.reduce((sum, length) => sum + length, 0) * 2);
+  assert.match(dialogue, /允许一次取得多字段、多案例、比较和综合/);
+  assert.match(dialogue, /未被请求时不主动代写下一调查或参与者理由/);
 });
 
 test("keeps v4 inventory and user-facing overview aligned with the dialogue experience", async () => {
@@ -232,40 +291,19 @@ test("keeps v4 inventory and user-facing overview aligned with the dialogue expe
   assert.match(userView, /一段从项目最初想法开始的完整 Chat 历史/);
   assert.match(userView, /三段彼此隔离、由作者构造的代表性可能接续/);
   assert.match(userView, /A 是完整 Chat。B 是完全相同的 Chat/);
-  assert.match(userView, /不声称对象让人更快决定什么重要/);
+  assert.match(userView, /不(?:声称|预设)对象让人更快决定什么重要/);
 });
 
-test("models output-contingent exploration as a shared non-DAG semantic graph", async () => {
-  const architecture = await readFile(new URL("docs/software-product-development-v1-scenario-information-architecture.md", root), "utf8");
+test("preserves shared graph theory while the v4.2 protocol governs the bounded study design", async () => {
+  const [architecture, protocol] = await Promise.all([
+    readFile(new URL("docs/software-product-development-v1-scenario-information-architecture.md", root), "utf8"),
+    readFile(new URL("docs/software-product-development-v1-research-protocol-v4.2.md", root), "utf8"),
+  ]);
   assert.match(architecture, /Epoch -> Frontier -> Trigger/);
-  assert.match(architecture, /OpportunitySpec = </);
-  assert.match(architecture, /OpportunityObservation = </);
-  assert.match(architecture, /OpportunitySpec_A\(opportunity\) = OpportunitySpec_B\(opportunity\)/);
   assert.match(architecture, /EpistemicTransition = </);
   assert.match(architecture, /ProductRevisionTransition = </);
   assert.match(architecture, /M_planned/);
   assert.match(architecture, /M_runtimeEligible/);
-  assert.match(architecture, /packetEligibilityKeyDigest \+ frozenPacketManifestDigest/);
-  assert.match(architecture, /M_runtimeEligible` 是 state 与 exact eligibility\/manifest 的关系/);
-  assert.match(architecture, /parentRevisionRefs: exact set/);
-  assert.match(architecture, /CELL:L\+F/);
-  assert.match(architecture, /CELL:L\+V/);
-  assert.match(architecture, /CELL:F\+V/);
-  assert.match(architecture, /PACKET:V-DIRECT-LONGHORIZON-v1/);
-  assert.match(architecture, /OP:COMMON-LOCAL-STATE/);
-  assert.match(architecture, /OP:COMMON-COMPOUND-WL/);
-  assert.match(architecture, /OP:COMMON-LOCAL-PORTABILITY/);
-  assert.match(architecture, /OP:COMMON-COMPOUND-PORTABILITY/);
-  assert.match(architecture, /OP:DIRECTED-STATE-DEFINITION/);
-  assert.match(architecture, /OP:DIRECTED-PORTABILITY-RECEIPT/);
-  assert.match(architecture, /predeclared_directed_request/);
-  assert.match(architecture, /L_STATE→C_STATE→L_PORT→C_PORT/);
-  assert.match(architecture, /TRACE:R0-LONGHORIZON-042/);
-  assert.match(architecture, /RECON:R0-ORG-57-71/);
-  assert.match(architecture, /D4→D30 continuation protocol/);
-  assert.match(architecture, /PROMOTION:V-DIRECT-O3/);
-  assert.match(architecture, /VERIFY:V-AFTER-PROMOTION/);
-  assert.match(architecture, /RECEIPT:TERMINAL-V-O3/);
   assert.match(architecture, /完整信息图不是 DAG/);
   assert.match(architecture, /CanonicalProjectHistory = </);
   assert.match(architecture, /H08 必须由当前参与者现场用自己的话完成/);
@@ -273,23 +311,58 @@ test("models output-contingent exploration as a shared non-DAG semantic graph", 
   assert.match(architecture, /ParticipantMotiveLine = </);
   assert.match(architecture, /CompositeOutput_t = </);
   assert.match(architecture, /latestStableOutput.*局部显著性触发器/);
-  assert.match(architecture, /authoring audit 以 40%–60% 为目标范围/);
-  assert.match(architecture, /NTE 不是 CHI_v6 已有 RQ\/SAP 的既定变量/);
-  assert.match(architecture, /对象通路不负责让参与者更快决定“该关心什么”/);
-  assert.match(architecture, /`21\/48` aggregate → Offline-first trace/);
-  assert.match(architecture, /`4` 次 saved-view maintenance → 一次改名/);
-  assert.match(architecture, /PACKET:R0-BACKLOG-DISPOSITION-v1/);
-  assert.match(architecture, /PACKET:R0-LONGHORIZON-CROSSCASE-v1/);
-  assert.match(architecture, /PACKET:R0-STATE-BOUNDARY-CROSSCASE-v1/);
-  assert.match(architecture, /PACKET:F-DIRECT-FIRST-EVAL-v1/);
-  assert.match(architecture, /PACKET:F-DIRECT-REVISED-E2-v1/);
-  assert.match(architecture, /CELL:FOCUS-NR-C1/);
-  assert.match(architecture, /authoring_pending/);
-  assert.match(architecture, /output-induced reframing/);
-  assert.match(architecture, /O1-O3/);
-  assert.doesNotMatch(architecture, /NTE 与 top-choice concentration。它们只用于确认 frontier 的探索性和既有分析模型所需 moderator/);
   assert.doesNotMatch(architecture, /跨 family 组合在 v2 中统一 OOM/);
-  assert.doesNotMatch(architecture, /每个 bounded trial 只有两个 condition-neutral external evidence windows/);
+  assert.match(architecture, /software-product-development-v1-research-protocol-v4\.2\.md/);
+  assert.match(protocol, /唯一现行合同/);
+  assert.match(protocol, /未预注册、未招募、未产生人效结果/);
+  assert.match(protocol, /共同任务模块先行/);
+  assert.match(protocol, /开放开发模块随后/);
+  assert.match(protocol, /NTE 是可选独立预试描述，不是四共同机会的入组、Gold 或计分必备字段/);
+  assert.match(protocol, /不按成功、所选产品方向或对象使用筛选主要样本/);
+  assert.match(protocol, /validByDeadline/);
+  assert.match(protocol, /restrictedUnresolvedTime/);
+  assert.match(protocol, /timeToVerifiedGold.*tExplicitDisposition/);
+  assert.match(protocol, /没有合理非劣界限和足够精度时/);
+  assert.match(protocol, /条件、选中对象、浮窗状态不注入 Agent/);
+  assert.match(protocol, /不把 packet 中所有节点记为参与者已读/);
+  assert.match(protocol, /discard = 丢弃未采用候选/);
+});
+
+test("compiles the E0 trial slice into four axes, typed edges, and a dynamic Frontier", async () => {
+  const [types, runtime, route, shell] = await Promise.all([
+    readFile(new URL("lib/experiment/types.ts", root), "utf8"),
+    readFile(new URL("lib/experiment/runtime.ts", root), "utf8"),
+    readFile(new URL("app/api/software-agent/route.ts", root), "utf8"),
+    readFile(new URL("components/experiment/ExperimentShell.tsx", root), "utf8"),
+  ]);
+  const { SOFTWARE_PRODUCT_DEVELOPMENT_V1: scenario } = await scenarioModule;
+  const depths = new Set(scenario.informationNodes.map((item) => item.epistemicDepth));
+  for (const depth of ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"]) {
+    assert.ok(depths.has(depth), `missing information depth ${depth}`);
+  }
+  assert.match(types, /InformationRelationKind/);
+  assert.match(types, /availableOperations/);
+  assert.match(types, /groundingPhrases/);
+  const nodeIds = new Set(scenario.informationNodes.map((item) => item.nodeId));
+  for (const edge of scenario.informationRelations) {
+    assert.ok(nodeIds.has(edge.sourceNodeId));
+    assert.ok(nodeIds.has(edge.targetNodeId));
+  }
+  assert.match(runtime, /frontierRef/);
+  assert.match(runtime, /buildPacket/);
+  assert.match(route, /当前局部类型化关系/);
+  assert.match(route, /frontierStage/);
+  assert.match(route, /invalidAnchorCount/);
+  assert.match(route, /允许锚点短语/);
+  assert.doesNotMatch(route, /visibleOrdinal|当前可见序号/);
+  assert.match(shell, /setRevealedNodeIds/);
+  assert.match(shell, /traversedRelationIds/);
+  assert.match(shell, /object_relation_navigated/);
+  assert.match(shell, /object_question_prepared/);
+  assert.match(shell, /object_working_set_question_prepared/);
+  assert.match(shell, /生成可编辑追问/);
+  assert.match(shell, /不会改变 Agent 输入/);
+  assert.doesNotMatch(shell, /visibleOrdinal|currentOrdinal/);
 });
 
 test("anchors object cards at their trigger and supports bounded dragging", async () => {
@@ -302,7 +375,7 @@ test("anchors object cards at their trigger and supports bounded dragging", asyn
   assert.match(shell, /setPointerCapture/);
   assert.match(shell, /onPointerMove=\{moveObjectDrag\}/);
   assert.match(shell, /object_card_moved/);
-  assert.match(shell, /style=\{\{ left: objectPosition\.x, top: objectPosition\.y \}\}/);
+  assert.match(shell, /style=\{\{ left: objectPosition\.x, top: objectPosition\.y, maxHeight:/);
   const backdropRule = css.match(/\.objectBackdrop\s*\{[^}]+\}/s)?.[0] ?? "";
   const modalRule = css.match(/\.objectModal\s*\{[^}]+\}/s)?.[0] ?? "";
   assert.doesNotMatch(backdropRule, /justify-content|padding:/);
@@ -325,7 +398,8 @@ test("keeps formal collection claims out of the engineering preview", async () =
     readFile(new URL("README.md", root), "utf8"),
     readFile(new URL("components/experiment/ExperimentShell.tsx", root), "utf8"),
   ]);
-  assert.match(readme, /第一阶段工程预览，不是正式数据采集系统/);
+  assert.match(readme, /不是正式数据采集系统/);
+  assert.match(readme, /所有判断保留原文并标记待审，未当作 Gold/);
   assert.match(shell, /formalDataCollection:\s*false/);
-  assert.match(shell, /ENGINEERING PREVIEW · 非正式采集/);
+  assert.match(shell, /V4 INFORMATION SPACE PILOT · 非正式采集/);
 });

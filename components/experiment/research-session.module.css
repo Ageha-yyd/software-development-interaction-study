@@ -1,0 +1,19 @@
+.root { min-height: 100vh; color: #25304b; background: #fafaff; }
+.reviewBar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 10px 22px; background: #f0edf9; font-size: 12px; }
+.reviewBar button { margin-left: auto; }
+.disposition { margin: 24px 0; display: grid; gap: 12px; padding: 20px; border: 1px solid #dcd8ec; border-radius: 12px; background: #fff; }
+.disposition label { line-height: 1.7; font-size: 14px; }
+.disposition textarea { min-height: 96px; resize: vertical; font: inherit; padding: 12px; border: 1px solid #b9b3cd; border-radius: 8px; }
+.root button { cursor: pointer; font: inherit; }
+.disposition button, .finish button, .reviewBar button { border: 1px solid #bfb3dc; background: #fff; color: #4a3970; border-radius: 7px; padding: 8px 12px; }
+.disposition button { justify-self: end; }
+.disposition button:disabled { opacity: .45; cursor: default; }
+.finish { margin: 80px auto; max-width: 700px; padding: 28px; line-height: 1.8; }
+.workbench { margin: auto; max-width: 1060px; padding: 32px; line-height: 1.7; color: #25304b; }
+.workbench h2 { margin: 0; font-size: 18px; }
+.workbench pre { max-height: 380px; overflow: auto; font-size: 12px; }
+.workbench input, .workbench select { padding: 6px; margin: 0 8px; }
+.tableScroll { overflow-x: auto; }
+.tableScroll table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tableScroll th, .tableScroll td { text-align: left; padding: 8px; border-bottom: 1px solid #e5e0ee; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }

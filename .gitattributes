@@ -1,0 +1,2 @@
+# Preserve archived validation bytes and their SHA-256 evidence bindings.
+/artifacts/v4.2-checks/phase2/** -text -whitespace

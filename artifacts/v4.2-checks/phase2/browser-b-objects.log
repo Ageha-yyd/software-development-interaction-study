@@ -1,0 +1,30 @@
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-objects","period":1,"scenarioId":"software-common-v42-local-state","objectOpened":true,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-objects","period":2,"scenarioId":"software-common-v42-compound-state","objectOpened":true,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-objects","period":3,"scenarioId":"software-common-v42-local-portability","objectOpened":true,"goldAssessed":false}
+{"validationClass":"automated_engineering_smoke","stage":"common_opportunity_exercised","label":"B-objects","period":4,"scenarioId":"software-common-v42-compound-portability","objectOpened":true,"goldAssessed":false}
+{
+  "validationClass": "automated_engineering_browser_smoke",
+  "informationSpaceVersion": "v4.2-e0",
+  "humanEfficiencyEvidence": false,
+  "formalStudyData": false,
+  "results": [
+    {
+      "label": "B-objects",
+      "condition": "B",
+      "useObjects": true,
+      "sessionCount": 6,
+      "dispositionCount": 9,
+      "objectsOpened": 4,
+      "fullResponsesPreserved": true,
+      "exposureReferencesVerified": true,
+      "goldAssessed": false
+    }
+  ],
+  "workbench": {
+    "c1Rejected": true,
+    "c2Adopted": true,
+    "rollbackVerified": true,
+    "humanEfficiencyEvidence": false
+  },
+  "completed": true
+}

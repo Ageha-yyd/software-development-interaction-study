@@ -156,30 +156,47 @@
 .objectLink:hover, .objectLink:focus-visible { color: #3f5fa7; text-decoration-style: solid; outline: 0; }
 
 .objectBackdrop { position: fixed; inset: 0; z-index: 80; overflow: hidden; background: transparent; }
-.objectModal { position: fixed; width: min(370px, calc(100vw - 20px)); max-height: calc(100vh - 20px); overflow: auto; color: #332a40; border: 1px solid #ddd7e7; border-radius: 14px; background: #fff; box-shadow: 0 22px 64px rgba(48, 34, 61, .2); }
+.objectModal { position: fixed; width: min(420px, calc(100vw - 20px)); max-height: calc(100vh - 20px); overflow: auto; color: #332a40; border: 1px solid #ddd7e7; border-radius: 14px; background: #fff; box-shadow: 0 22px 64px rgba(48, 34, 61, .2); }
 .objectModal > header { display: flex; align-items: flex-start; gap: 10px; padding: 13px 14px; border-bottom: 1px solid #ece8f0; cursor: grab; touch-action: none; user-select: none; }
 .objectModal > header:active { cursor: grabbing; }
 .objectModal > header > div { min-width: 0; flex: 1; }
-.objectModal > header span { color: #8b7b9c; font-size: 7px; }
-.objectModal h2 { margin: 3px 0 0; color: #342a40; font-size: 13px; line-height: 1.4; font-weight: 720; }
+.objectModal > header span { color: #8b7b9c; font-size: 11px; }
+.objectModal h2 { margin: 3px 0 0; color: #342a40; font-size: 16px; line-height: 1.4; font-weight: 720; }
 .objectModal > header .dragGrip { align-self: center; color: #a399aa; font-size: 14px; line-height: 1; }
-.objectModal > header button { flex: none; padding: 6px 10px; border: 1px solid #dfd9e7; border-radius: 8px; color: #71667b; background: #fff; font-size: 9px; font-weight: 650; }
+.objectModal > header button { flex: none; padding: 6px 10px; border: 1px solid #dfd9e7; border-radius: 8px; color: #71667b; background: #fff; font-size: 12px; font-weight: 650; }
 .objectModal > header button:hover { color: #4f3f5f; background: #f8f6fa; }
 .objectBody { padding: 13px 14px 12px; }
-.objectBody > p { margin: 0; color: #554b60; font-size: 11px; line-height: 1.68; }
+.objectBody > p { margin: 0; color: #554b60; font-size: 14px; line-height: 1.72; white-space: pre-wrap; overflow-wrap: anywhere; }
 .objectBody dl { display: grid; gap: 0; margin: 14px 0 0; border-top: 1px solid #eeeaf1; }
 .objectBody dl div { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px; padding: 7px 0; border-bottom: 1px solid #f0edf2; }
-.objectBody dt { color: #998fa1; font-size: 8px; }
-.objectBody dd { margin: 0; color: #685d72; font-size: 8px; overflow-wrap: anywhere; }
+.objectBody dt { color: #998fa1; font-size: 12px; }
+.objectBody dd { margin: 0; color: #685d72; font-size: 12px; overflow-wrap: anywhere; }
+.objectRelations, .objectActions { display: grid; gap: 7px; padding: 0 14px 12px; }
+.objectRelations > strong, .objectActions > strong { color: #514657; font-size: 12px; }
+.objectRelations > div { display: grid; gap: 5px; }
+.objectRelations button { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 7px; width: 100%; padding: 7px 8px; border: 1px solid #e8e2ed; border-radius: 8px; text-align: left; background: #fbf9fd; }
+.objectRelations button:hover { border-color: #cfc0df; background: #f7f2fb; }
+.objectRelations button span { color: #8c7b9c; font-size: 11px; }
+.objectRelations button b { min-width: 0; color: #5d5067; font-size: 12px; font-weight: 620; overflow-wrap: anywhere; }
+.objectActions > div { display: flex; flex-wrap: wrap; gap: 5px; }
+.objectActions button { padding: 6px 9px; border: 1px solid #dcd2e7; border-radius: 999px; color: #654b80; background: #fff; font-size: 12px; font-weight: 650; }
+.objectActions button:hover { border-color: #a98cc6; background: #faf6fd; }
+.objectActions small { color: #958c9c; font-size: 11px; }
 .objectModal > footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 12px 14px 14px; border-top: 1px solid #ece8f0; }
 .objectModal > footer > div { min-width: 0; display: grid; gap: 3px; }
-.objectModal > footer strong { color: #514657; font-size: 8px; }
-.objectModal > footer small { color: #958c9c; font-size: 7px; line-height: 1.45; }
-.objectModal > footer button { flex: none; padding: 8px 10px; border: 0; border-radius: 8px; color: #fff; background: #6d28d9; font-size: 8px; font-weight: 700; }
+.objectModal > footer strong { color: #514657; font-size: 12px; }
+.objectModal > footer small { color: #958c9c; font-size: 11px; line-height: 1.45; }
+.objectModal > footer button { flex: none; padding: 8px 10px; border: 0; border-radius: 8px; color: #fff; background: #6d28d9; font-size: 12px; font-weight: 700; }
 .objectModal > footer button:hover { background: #5b21b6; }
 
+.productReview { margin: 20px 0; padding: 20px; border: 1px solid #aabfc0; border-radius: 12px; background: #f4f9f8; color: #203b3e; font-size: 14px; line-height: 1.7; }
+.productReview h3 { margin: 0 0 8px; font-size: 16px; }
+.productReview p { white-space: pre-wrap; }
+.productReview > div { display: flex; gap: 12px; flex-wrap: wrap; }
+.productReview button { padding: 9px 14px; border: 1px solid #7b9697; border-radius: 8px; background: white; cursor: pointer; font: inherit; }
+.productReview button:disabled { opacity: .5; cursor: wait; }
 .systemMessage { width: fit-content; max-width: 88%; margin: 8px auto 22px; color: #6f6677; }
-.systemMessage p { margin: 0; font-size: 8px; line-height: 1.55; }
+.systemMessage p { margin: 0; font-size: 14px; line-height: 1.55; }
 .thinking { display: flex; gap: 4px; align-items: center; height: 30px; }
 .thinking i { width: 4px; height: 4px; border-radius: 50%; background: #8a72b2; animation: pulse 1.1s infinite ease-in-out; }
 .thinking i:nth-child(2) { animation-delay: .14s; }
@@ -199,7 +216,13 @@
 .composer > button { width: 34px; height: 34px; margin: 4px 0; border: 0; border-radius: 50%; color: #fff; background: var(--accent); font-size: 15px; font-weight: 800; }
 .composer > button:hover:not(:disabled) { background: var(--accentHover); }
 .composer > button:disabled { color: #aaa3af; background: #eeeaf1; cursor: default; }
-.selectedReferences { grid-column: 1 / -1; padding: 6px 10px 2px; border-top: 1px solid #eeeaf1; color: #80669f; font-size: 7px; }
+.selectedReferences { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 7px; align-items: center; padding: 6px 7px 1px; border-top: 1px solid #eeeaf1; color: #80669f; font-size: 7px; }
+.selectedReferences > span { color: #8b7b9c; font-weight: 700; }
+.selectedReferences > div { display: flex; min-width: 0; flex-wrap: wrap; gap: 4px; }
+.selectedReferences > div button { display: inline-flex; max-width: 180px; align-items: center; gap: 5px; padding: 4px 6px; border: 1px solid #ded4e8; border-radius: 999px; color: #675374; background: #faf7fc; font-size: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.selectedReferences > div button b { color: #9888a5; font-size: 9px; }
+.selectedReferences > button { padding: 5px 7px; border: 1px solid #cdbbdd; border-radius: 7px; color: #674381; background: #fff; font-size: 7px; font-weight: 700; }
+.selectedReferences > button:hover { background: #f8f2fc; }
 
 @media (max-width: 920px) {
   .appShell { grid-template-columns: 220px minmax(0, 1fr); }

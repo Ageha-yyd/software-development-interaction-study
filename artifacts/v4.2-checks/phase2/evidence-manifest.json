@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "software-development-v4.2-engineering-evidence-manifest",
+  "createdAtUtc": "2026-09-12T08:36:21.6984787Z",
+  "evidenceClass": "engineering_validation_and_author_constructed_stimuli",
+  "formalStudyReady": false,
+  "realModelQualified": false,
+  "mainPdfSha256": "96574ca2e2046aeceb67912c6e5816a9947da096ea8c6908e0fbb311f6be76ce",
+  "sourceFiles": [
+    {
+      "path": "app/api/product-evaluation/route.ts",
+      "sha256": "c45d058429215c196e40866bff7094d8516f26f31b10d790cd33f28bf8b9cec7"
+    },
+    {
+      "path": "app/api/software-agent/route.ts",
+      "sha256": "fd0e233aaff54b646001ccda56b612f92ece021cdb72794ca794bbac7903ea6d"
+    },
+    {
+      "path": "app/api/software-product/route.ts",
+      "sha256": "e2259969235e887bf3127beb0a55e93522ddb43a82bec6d5409774cd3305da0e"
+    },
+    {
+      "path": "app/study/software-development-v42/page.tsx",
+      "sha256": "263d967d098775dcc42b4f4fc32abf22636472caa167b99b0baad4ae7a60e1bf"
+    },
+    {
+      "path": "app/study/software-development-v42/workbench/page.tsx",
+      "sha256": "b5889cbd813d0f324267d617fea9cd329cdc8331420bea9466f14714f07045fe"
+    },
+    {
+      "path": "components/experiment/experiment-shell.module.css",
+      "sha256": "70808684d0a1a1b3197d481255079f6b29f02f838732af9764137d829bcf21ff"
+    },
+    {
+      "path": "components/experiment/ExperimentShell.tsx",
+      "sha256": "fda2a3c61ade46f3c5aa81942bba28e2b236d36235bfae2029da71c94141c096"
+    },
+    {
+      "path": "components/experiment/ProductWorkbenchPanel.tsx",
+      "sha256": "689a602917357a89808add58635a49a87f75534ad1c75d0dec640228cea5a8e3"
+    },
+    {
+      "path": "components/experiment/research-session.module.css",
+      "sha256": "b05b98661c6f39b687fc7a93651d6753f80fada617fdfd1fd32bd4db7b241635"
+    },
+    {
+      "path": "components/experiment/ResearchSession.tsx",
+      "sha256": "4d431f00d148b1448eecac428ff9ded5d46f4fde64b3b0661b753afa93de5013"
+    },
+    {
+      "path": "docs/software-development-v4.2-formative-package.md",
+      "sha256": "1c5a054adc9f9c8d917438a93d30acc4014d7baabac8d15cabf9dbc85504257b"
+    },
+    {
+      "path": "docs/software-development-v4.2-implementation-status.md",
+      "sha256": "bfb8d4a75ee405bed35084a6050b56a76034f953497d6a66ac34915e30e774ad"
+    },
+    {
+      "path": "docs/software-development-v4.2-manuscript-redline.md",
+      "sha256": "8c642592b656664b21a52644d7d49170f9c003f504f264c96ba893073ebb6330"
+    },
+    {
+      "path": "docs/software-development-v4.2-review-workflow.md",
+      "sha256": "d9019190b9041daf4ab3bd584c742c69d3dd8b72cd18bd141972928835e63cd2"
+    },
+    {
+      "path": "docs/software-product-development-v1-corpus-audit.md",
+      "sha256": "3305815282d4b460117b7907d682ac501785f860a09454b9d167dcc104a79cf6"
+    },
+    {
+      "path": "docs/software-product-development-v1-independent-design-review.md",
+      "sha256": "ffdd00fab1eaae0e5877354d8364d95109714cb79990490924417f3bf7c3920f"
+    },
+    {
+      "path": "docs/software-product-development-v1-participant-consumed-script.md",
+      "sha256": "232365ec19699e6663253664c9c4c514b24e7c7ce3ba49b07d215c9d01923b1e"
+    },
+    {
+      "path": "docs/software-product-development-v1-participant-content-inventory.md",
+      "sha256": "f8b4d92d92f62fabc8751eff1d420631a5d99b57e7eedede19d52c0577388552"
+    },
+    {
+      "path": "docs/software-product-development-v1-research-protocol-v4.2.md",
+      "sha256": "1cfd298dbbd36a2eb5972bbfa32a27d1b3c66204add4acd5bcef226fec351443"
+    },
+    {
+      "path": "docs/software-product-development-v1-scenario-information-architecture.md",
+      "sha256": "49596953774c05d746458bf4ba80a82787096b49bb7847948b494846eb02c31d"
+    },
+    {
+      "path": "docs/software-product-development-v1-user-view.md",
+      "sha256": "7f79decffe9b7d309e6a2d6397746781c7fbe1c31a1314f96468ec988452ecb5"
+    },
+    {
+      "path": "lib/experiment/agent-gateway.ts",
+      "sha256": "79bccfab06891640a2f44be017ae6d057832019bb2742afa07ed76bf5f59d57a"
+    },
+    {
+      "path": "lib/experiment/product-action-session.mjs",
+      "sha256": "f61a92cc729c12b3999562b1908646f9a916af601686753f72cf33b9e388d30f"
+    },
+    {
+      "path": "lib/experiment/product-service.ts",
+      "sha256": "10808e4af5fa7e48ab1dcdb87da4bc5efb04e6d6d0ff4b4f7373fbb441abc53a"
+    },
+    {
+      "path": "lib/experiment/product-workbench.mjs",
+      "sha256": "545a923ffd1d4596ff4c645f88c52cae4ed36475b7f049c1047cfab053eba7f6"
+    },
+    {
+      "path": "lib/experiment/review-packet.mjs",
+      "sha256": "f198020d69540e8ea57da1988455ee4ea814492e324bc4337f8a4931a3b00f9f"
+    },
+    {
+      "path": "lib/experiment/runtime.ts",
+      "sha256": "2405ee584173f70cd7bcc91bf50134a5ad61ea03181e9df18d86590fb8288e3e"
+    },
+    {
+      "path": "lib/experiment/telemetry.ts",
+      "sha256": "76c25d581b763e0476a68d13aaed9a97c7b19fe93c0ed20e838c687f2d4eed33"
+    },
+    {
+      "path": "lib/experiment/types.ts",
+      "sha256": "7e04855555ced38d4dec1925db9c63639cda17a07b9f54cad017d52e5ee2b280"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c9d32a15cf3f9f055c4ff4cd99b622c421f18df840249d9923e97eeef4cd0e6e"
+    },
+    {
+      "path": "scenarios/common-opportunities-v4.2.ts",
+      "sha256": "55281e8c5386f9cff07d5c51c8382289def2bef1454727349849b142ed37aead"
+    },
+    {
+      "path": "scenarios/materials/common-opportunities-v4.2.mjs",
+      "sha256": "e5d9b3c5e22241b3b53a4fd5ea16a6bc4a4c1f2396d2b5c46876d25078e6422e"
+    },
+    {
+      "path": "scenarios/materials/linked-candidate-evaluation-v4.2.mjs",
+      "sha256": "cd18d493cecdbf2d6f62aeb4bf240c9a4640f713f02f1a6f71773711936837c7"
+    },
+    {
+      "path": "scenarios/materials/reading-list-e0-projection-v4.2.mjs",
+      "sha256": "507de1d4adbf1169405d1dcadda42eb00ca769bfcc460fa24ceea0789c690535"
+    },
+    {
+      "path": "scenarios/materials/reading-list-e0-v4.2.mjs",
+      "sha256": "59fe6d289ba9b58f488ba01cab82ef99ee9dc163467775c0b8aa3f0e4b2a96c8"
+    },
+    {
+      "path": "scenarios/software-product-development-v1.ts",
+      "sha256": "b96a6de535269122878828c37b329328deb846f1a16e44604ca6e8d5789d2fd0"
+    },
+    {
+      "path": "scenarios/with-evaluation-facts.ts",
+      "sha256": "2433d582baa576c0cdb0058c8be9121eae8bc64f019511b0540e355e0e59741b"
+    },
+    {
+      "path": "scenarios/with-product-facts.ts",
+      "sha256": "ed7333c29ee82408ba8035b48e789bcdd899d0f2080bf40cb433ec25b2f0c582"
+    },
+    {
+      "path": "scripts/browser-interaction-smoke.mjs",
+      "sha256": "cfa9cc42e3c3663f8a08972725d7a532de99781ea6d627099753f0dcd8c4f232"
+    },
+    {
+      "path": "scripts/product-v42-browser-smoke.mjs",
+      "sha256": "8adea0cb8a9f14149a972a8fd7670bc7367d123ecf4e769ac25b5ffa0c52af38"
+    },
+    {
+      "path": "scripts/product-v42-mock-provider.mjs",
+      "sha256": "2c27a460c4dfc08931867ec5de62a8a0df1bb151eacd73cf7d249cf6a8dc42bc"
+    },
+    {
+      "path": "scripts/research-v42-browser-smoke.mjs",
+      "sha256": "997690a7d109ba7b9f6068b8809876e6783db99b700f4fead897f0ce9cb9430b"
+    },
+    {
+      "path": "scripts/review-v42-packet.mjs",
+      "sha256": "a583ae2a9e1e17034f9ee0befd4d7ee6b38eb38c775dbebfb15bcee3f2dcd283"
+    },
+    {
+      "path": "tests/canonical-material-delivery-v42.test.mjs",
+      "sha256": "0f4c2139fecb00937e7b2ee00e60ee2be41195f4040fafa77903dd3f91efec6c"
+    },
+    {
+      "path": "tests/chat-parity-v42.test.mjs",
+      "sha256": "7c9fe8c0bd8df1f88509ea516667eb066913d4490054e205541321b3592f37fe"
+    },
+    {
+      "path": "tests/common-opportunities-v42.test.mjs",
+      "sha256": "d1484f7bf338a3ccc0a7f37ded83fc4cae1701114f353febfe6d0b9842d79201"
+    },
+    {
+      "path": "tests/common-scenario-projection-v42.test.mjs",
+      "sha256": "104ee5742660ab21b3382c9b43ee8e1a965ff070860dac0d191030243f176ff4"
+    },
+    {
+      "path": "tests/linked-candidate-evaluation-v42.test.mjs",
+      "sha256": "051af013089a76148cba40b0380e5e2eb57a05e664ff08bb3529dc4205273796"
+    },
+    {
+      "path": "tests/product-action-session-v42.test.mjs",
+      "sha256": "e7518cbdcb82e70e581dca95cf90c7f1b828cf8cf0cc09c7fcc88bafe7ee2dca"
+    },
+    {
+      "path": "tests/product-chat-service-v42.test.mjs",
+      "sha256": "2574fedd35a6cbafc995c3cf40bfec9f07347a2bf2366b2bbfb8e18f504f7eb0"
+    },
+    {
+      "path": "tests/product-workbench-v42.test.mjs",
+      "sha256": "bdcb28bef5a3ea596e08e5826546c0a51ae4af10eb50f5c38c34fc5ff6ad9fc4"
+    },
+    {
+      "path": "tests/reading-list-e0-corpus.test.mjs",
+      "sha256": "dec3fbfaf44110d27bba08576fc020d27b08d3ada662a001858e792c01f5fb84"
+    },
+    {
+      "path": "tests/rendered-html.test.mjs",
+      "sha256": "6c43071ea0a47eed0f1642d517917f495998fe8f538a65c8ecb53203d43aa503"
+    },
+    {
+      "path": "tests/review-packet-cli-v42.test.mjs",
+      "sha256": "5a9e0950cf1655342e83f8e0a2ffedcddded14fda12a079cd40c482783c45e0f"
+    },
+    {
+      "path": "tests/review-packet-v42.test.mjs",
+      "sha256": "c9fec838189ed7f0b1a379d3110c2c4f1118b183ee829123c1414bdbf7f60934"
+    },
+    {
+      "path": "tests/session-evaluation-publication-v42.test.mjs",
+      "sha256": "25a58803206cad9ccc30f15a64451738c74917d36a296e1c1a1fc78a24cba8a9"
+    },
+    {
+      "path": "tests/software-development-study.test.mjs",
+      "sha256": "8071aec9005fceaa27352c10fa77a26c58fdd8e0a2cd4384309ba4b15747b969"
+    },
+    {
+      "path": "tests/telemetry-persistence-v42.test.mjs",
+      "sha256": "e06ec76f615c1d2e0d11f60557386ddd9d6b68401af7dfe507f8cf7f68510c36"
+    }
+  ],
+  "checkArtifacts": [
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser-b-nonuptake.log",
+      "sha256": "84f4df7e23651daef5c654336cdb153635aa833e1aefbe88775bbe7e23dd200a"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser-b-objects.log",
+      "sha256": "47c39293f50b2a94e430f873d923a7e0b8bb0b7d1227a5d99965c87c095d5904"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser-smoke.log",
+      "sha256": "661bb9bc4dcce75c495f58b2c4a17f40220e9beed68be45f71be461af9d56f28"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/A-chat-only-research-complete.png",
+      "sha256": "0a3fec74ef2330480d610fc4664a9a4d9de36fc18ee2d81bd997ffa8a365c24e"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/A-chat-only-review-packet.json",
+      "sha256": "a69ee4467cfd45cfdc0c1ff8f58ee994af6b48f43bc2ff9d7c5788754c2eaba8"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/A-chat-only-review-report.json",
+      "sha256": "1431fc65f6c8b4e61465e18948390cda1fa0a22bebcf3193a88dc12072606f30"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-chat-only-research-complete.png",
+      "sha256": "0a3fec74ef2330480d610fc4664a9a4d9de36fc18ee2d81bd997ffa8a365c24e"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-chat-only-review-packet.json",
+      "sha256": "c7188d4c630768d238c469423168b43f9425f85ef87a0ce2dcca13ff704d6da9"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-chat-only-review-report.json",
+      "sha256": "fe424e49c9d3085aefb168f39f871ed563e0d49a101607cc3a38d747597b9f42"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-objects-failure.png",
+      "sha256": "17b6cf298395b77c1a4a524ea23e86d30d7a12056048ff0081ebd418380245b3"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-objects-last-material-object.png",
+      "sha256": "1b059b49a566827963a0fe4067039d68b765df87429523651cabf2afdf087695"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-objects-research-complete.png",
+      "sha256": "0a3fec74ef2330480d610fc4664a9a4d9de36fc18ee2d81bd997ffa8a365c24e"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-objects-review-packet.json",
+      "sha256": "a3b02b7993218ae07ac39b7e443f647642ba9825ba8e62f13d5809e0568f9542"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/B-objects-review-report.json",
+      "sha256": "ef8f695775c5b673f444d339deaf789034f88ba70bfb7224353a7034d65fdaa8"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/browser/workbench-C2-adopted.png",
+      "sha256": "d6a38db1cfb7a090e194665dd2daefb9b74d1adedd2f7e47321380d55d2da243"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/build.log",
+      "sha256": "73082a25f2bd3a0c320056116375667abb63f5decb4d33dc29b0674f72003d52"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/node-test.log",
+      "sha256": "eaac01627bcfc7ae7638e7f401c2ff1f859083480ec66c8940f62407f33d069c"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser-smoke.log",
+      "sha256": "58d9ba99ba6722f01d5018e071dfc0b0789d0a6ba82bed8ad237e53e4e0ed6b6"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/A-product-evaluation-page.png",
+      "sha256": "8f4d9fed34c5085d2dd28758f64174d2bec04f3944cbf66a27ee1b4fd8cf10e1"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/A-product-failure.png",
+      "sha256": "f47d45dc8bc56e236d9befdae21e93d6c9c10d6d51239cf6b04598f7177bb1db"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/A-product-review-packet.json",
+      "sha256": "1c61c6b8a432035161fda2a1ae47912fe2cad0ed4839f98e8d46b0abbf6cbca9"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/A-product-review-report.json",
+      "sha256": "d62381d5f008d0cbc3a2088c0855731f02eaf7d5b29f780b1cbc8f04d249197a"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/B-product-evaluation-page.png",
+      "sha256": "d51484b9a4f524bdb5de6a0cfe138b6d704fc8b05a21d4aa716de9965d1737d4"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/B-product-receipt-object.png",
+      "sha256": "79e5545e62592ba92ec90b4c548df7df295a1b99948175978d06dd0d4533def9"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/B-product-review-packet.json",
+      "sha256": "1784e4e73c375e4a3e045da578e58e9c50c9b3a2a9c9d87672da3e0d120f734a"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/product-browser/B-product-review-report.json",
+      "sha256": "89dda6b312513a05bc7f4d0b07dd1cf73f01b347eac5d5cdb5ff2c3347f302bb"
+    },
+    {
+      "path": "artifacts/v4.2-checks/phase2/typescript.log",
+      "sha256": "e30ff35a75dd1b34f893d587d3da450cda916bc873c0d3cd2f761238c7d458d5"
+    }
+  ],
+  "notes": [
+    "Hashes identify the local reviewed candidate, not a preregistration or immutable formal release.",
+    "202 Node tests, production build and lint passed. Existing repository TypeScript errors remain.",
+    "Browser product tools used a loopback engineering mock. Preview packets contain no human-study evidence.",
+    "Initial failures are retained alongside successful reruns."
+  ]
+}
